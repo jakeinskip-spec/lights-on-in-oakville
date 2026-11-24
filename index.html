@@ -1,0 +1,2591 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title data-own="">Keeping South County’s Lights On</title>
+<meta content="cover" data-own="" name="claude:viewport-fit-sides"/>
+<meta content="An HCAP civic action project on repeated, multi-day power outages in Oakville, Missouri, and two feasible solutions." data-own="" name="description"/>
+<link data-own="" href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" data-own="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link data-own="" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<style data-own="">
+/* Take action now: the email tool, right under the title */
+#act-now { background: var(--alt); }
+.act-now .act-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(28px, 4vw, 56px); align-items: start; }
+.act-intro { display: grid; gap: 18px; position: sticky; top: 84px; }
+.act-intro h2 { font-size: clamp(32px, 4.4vw, 52px); }
+.act-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: a; }
+.act-steps li { counter-increment: a; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: start; color: var(--muted); }
+.act-steps li::before { content: counter(a); width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: var(--bg); display: grid; place-items: center; font-weight: 700; font-size: 15px; }
+.act-steps b { color: var(--ink); }
+.act-now .composer { box-shadow: inset 0 0 0 2px var(--accent), var(--shadow); }
+@media (max-width: 900px) { .act-now .act-grid { grid-template-columns: minmax(0, 1fr); } .act-intro { position: static; } }
+.email-jump { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; display: grid; gap: 12px; justify-items: start; align-content: start; }
+.email-jump p:not(.eyebrow) { color: var(--muted); }
+/* Edit mode */
+.editbar { position: fixed; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 30; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--rule); box-shadow: 0 8px 24px rgba(0,0,0,0.18); border-radius: 999px; padding: 8px 8px 8px 18px; font-size: 14px; color: var(--muted); max-width: calc(100vw - 32px); }
+.eb-btn { font: 700 14px var(--font-body); padding: 8px 16px; border-radius: 999px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+.eb-btn.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+body.editing [contenteditable="true"] { outline: 2px dashed var(--glow); outline-offset: 3px; border-radius: 3px; cursor: text; }
+body.editing [contenteditable="true"]:focus { outline-style: solid; }
+/* Uploaded photos and videos */
+figure.ph.has-media { border: 0; background: transparent; padding: 0; min-height: 0; aspect-ratio: auto; gap: 10px; align-content: start; }
+.m-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+.m-grid img, .m-grid video { width: 100%; height: auto; max-height: 520px; object-fit: cover; border-radius: 10px; display: block; background: var(--placeholder); }
+.m-cap { font-size: 14px; color: var(--muted); }
+.hero .m-cap { color: var(--on-storm-muted); }
+.ph-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 6px; }
+.ph-btn { font: 700 14px var(--font-body); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer; }
+.ph-btn.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+.ph-btn:disabled { opacity: 0.6; cursor: default; }
+.ph-msg { font-size: 14px; color: var(--muted); }
+.hero .ph-msg { color: var(--on-storm-muted); }
+.ph-credit { display: grid; gap: 4px; font-size: 13px; color: var(--muted); width: 100%; }
+.hero .ph-credit { color: var(--on-storm-muted); }
+.ph-credit input { font: 15px var(--font-body); color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; width: 100%; }
+/* Layout: one long scroll, like walking a power line from the plant to your street. Dark "storm" bands for the hero and the key numbers; light pages for reading. */
+/* Palette: a wooded Oakville street. Pine greens and bark brown from the trees, porch-light yellow for "power on". */
+:root {
+  --bg: #F3F5EF;
+  --surface: #FFFFFF;
+  --ink: #1F2E24;
+  --muted: #556352;
+  --rule: #D6DDCF;
+  --accent: #2E6B3A;
+  --bark: #7A4F2C;
+  --glow: #F2C14E;
+  --water: #4E8FB8;
+  --storm: #2B4A36;
+  --hero: linear-gradient(160deg, #22392B 0%, #2F5A3E 55%, #4D6B3B 100%);
+  --on-storm: #FBFAF4;
+  --on-storm-muted: #D5E0CF;
+  --dark-home: #A3AD9C;
+  --out: #B8402F;
+  --storm-hot: #F4A08F;
+  --placeholder: #E9EEE3;
+  --leaf: #DDEBD5;
+  --soil: #EDE3D6;
+  --font-display: 'Rubik', 'Segoe UI', Arial, sans-serif;
+  --font-body: 'Nunito Sans', 'Segoe UI', Arial, sans-serif;
+  --font-data: 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
+  --wrap: 1120px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121A14; --surface: #1B261E; --ink: #E7EEE4; --muted: #A9B8A6; --rule: #2D3B30;
+    --accent: #8CCB8F; --bark: #C79A6B; --glow: #F2C14E; --water: #6FA9CF; --storm: #1A2B1F;
+    --hero: linear-gradient(160deg, #14231A 0%, #22392A 100%);
+    --on-storm: #F3F6EF; --on-storm-muted: #C3D2BF;
+    --dark-home: #4F5D52; --out: #F08A78; --placeholder: #1E2B22; --leaf: #22382A; --soil: #2A231B; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121A14; --surface: #1B261E; --ink: #E7EEE4; --muted: #A9B8A6; --rule: #2D3B30;
+  --accent: #8CCB8F; --bark: #C79A6B; --glow: #F2C14E; --water: #6FA9CF; --storm: #1A2B1F;
+  --hero: linear-gradient(160deg, #14231A 0%, #22392A 100%);
+  --on-storm: #F3F6EF; --on-storm-muted: #C3D2BF;
+  --dark-home: #4F5D52; --out: #F08A78; --placeholder: #1E2B22; --leaf: #22382A; --soil: #2A231B; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--storm); }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.1; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(30px, 4.4vw, 44px); letter-spacing: -0.3px; }
+h3 { font-size: 24px; letter-spacing: 0.3px; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--glow); outline-offset: 2px; }
+.eyebrow { font-family: var(--font-data); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+.lede { font-size: 20px; color: var(--muted); max-width: 65ch; }
+.prose { max-width: 65ch; display: grid; gap: 14px; color: var(--muted); }
+.prose strong { color: var(--ink); }
+.num { font-variant-numeric: tabular-nums; }
+.src { font-size: 14px; color: var(--muted); }
+
+/* Nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--storm); border-bottom: 1px solid rgba(255,200,69,0.4); }
+.nav .wrap { display: flex; align-items: center; gap: 24px; height: 56px; }
+.nav .brand { font-family: var(--font-display); font-size: 18px; color: var(--on-storm); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; text-decoration: none; }
+.nav .brand span { color: var(--glow); }
+.nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; overflow-x: auto; min-width: 0; scrollbar-width: none; }
+.nav ul::-webkit-scrollbar { display: none; }
+.nav a.l { color: var(--on-storm-muted); text-decoration: none; font-size: 15px; white-space: nowrap; padding-block: 6px; }
+.nav a.l:hover { color: var(--glow); }
+@media (max-width: 720px) { .nav .brand { display: none; } }
+
+section { scroll-margin-top: 72px; }
+.band { padding-block: 88px; }
+.band + .band { border-top: 1px solid var(--rule); }
+.stack { display: grid; gap: 40px; }
+.head { display: grid; gap: 14px; }
+
+/* Hero */
+.hero { background: var(--hero); color: var(--on-storm); padding-block: 72px 80px; }
+.hero .eyebrow { color: var(--glow); }
+.hero h1 { font-size: clamp(40px, 6.6vw, 76px); letter-spacing: -0.5px; }
+.hero h1 em { font-style: normal; color: var(--glow); }
+.hero .thesis { font-size: clamp(18px, 2.2vw, 22px); color: var(--on-storm-muted); max-width: 62ch; display: grid; gap: 12px; }
+.hero .thesis b { color: var(--on-storm); font-weight: 600; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; }
+.hero-grid > * { min-width: 0; }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+.byline { font-family: var(--font-data); font-size: 13px; letter-spacing: 1px; color: var(--on-storm-muted); text-transform: uppercase; }
+.facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border-top: 1px solid rgba(238,241,246,0.18); margin-top: 8px; }
+.facts div { padding: 18px 16px 0 0; display: grid; gap: 4px; min-width: 0; }
+.facts b { font-family: var(--font-display); font-size: 22px; color: var(--on-storm); font-weight: 600; line-height: 1.1; }
+.facts span { font-size: 14px; color: var(--on-storm-muted); line-height: 1.4; }
+
+/* QR code */
+.qr-card { display: flex; align-items: center; gap: 20px; padding: 16px; border: 1px solid rgba(238,241,246,0.18); border-radius: 10px; }
+.qr-box { flex: none; width: 136px; height: 136px; background: #FFFFFF; padding: 8px; border-radius: 6px; display: grid; place-items: center; }
+.qr-box svg, .qr-box img, .qr-box canvas { width: 120px !important; height: 120px !important; display: block; }
+.qr-box .fallback { font: 12px var(--font-data); color: #14213D; text-align: center; overflow-wrap: anywhere; }
+.qr-text { display: grid; gap: 6px; min-width: 0; }
+.qr-text h3 { color: var(--on-storm); font-size: 22px; }
+.qr-text p { color: var(--on-storm-muted); font-size: 15px; }
+.qr-text .eyebrow { color: var(--glow); }
+@media (max-width: 400px) { .qr-card { flex-direction: column; align-items: flex-start; } }
+
+/* Media placeholders */
+.ph { border: 2px dashed var(--rule); background: var(--placeholder); border-radius: 10px; padding: 24px; display: grid; gap: 6px; align-content: center; min-height: 200px; color: var(--muted); }
+.ph .tag { font-family: var(--font-data); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); }
+.ph b { color: var(--ink); font-size: 17px; }
+.ph p { font-size: 15px; }
+.hero .ph { border-color: rgba(238,241,246,0.28); background: rgba(238,241,246,0.06); color: var(--on-storm-muted); aspect-ratio: 16 / 10; max-width: 100%; }
+.hero .ph b { color: var(--on-storm); }
+.hero .ph .tag { color: var(--glow); }
+
+/* Waffle: hidden storm minutes */
+.waffle-wrap { display: grid; gap: 14px; }
+.waffle { display: grid; grid-template-columns: repeat(16, 1fr); gap: 6px; max-width: 640px; }
+.waffle i { aspect-ratio: 1; border-radius: 3px; display: block; background: var(--on-storm); }
+.waffle i.h { background: transparent; border: 2px dashed var(--storm-hot); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 15px; color: var(--on-storm-muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 16px; height: 16px; border-radius: 3px; display: inline-block; background: var(--on-storm); }
+.legend i.h { background: transparent; border: 2px dashed var(--storm-hot); }
+
+/* Panels for diagrams */
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 28px; display: grid; gap: 18px; min-width: 0; }
+.panel h3 { font-size: 22px; }
+.scroll-x { overflow-x: auto; }
+
+/* Trim cycle */
+.years { display: grid; grid-template-columns: repeat(7, 1fr); min-width: 560px; margin-top: 8px; }
+.years > div { display: grid; gap: 8px; justify-items: center; align-content: start; text-align: center; padding-top: 20px; border-top: 3px solid var(--rule); position: relative; min-width: 0; }
+.years > div::before { content: ""; position: absolute; top: -9px; width: 15px; height: 15px; border-radius: 50%; background: var(--surface); border: 3px solid var(--rule); }
+.years > div.t::before { background: var(--bark); border-color: var(--bark); }
+.years > div.s::before { background: var(--out); border-color: var(--out); }
+.years b { font-family: var(--font-data); font-weight: 500; font-size: 14px; }
+.chip { font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.chip.trim { background: var(--bark); color: var(--surface); }
+.chip.hit { background: var(--out); color: var(--surface); }
+.chip.grow { color: var(--accent); border: 1px dashed var(--accent); font-weight: 600; }
+
+/* Restoration order */
+.order { display: grid; gap: 16px; }
+.order .r { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: center; }
+.order .r > div { min-width: 0; }
+.order .rank { font-family: var(--font-display); font-size: 26px; color: var(--accent); }
+.order .bar2 { height: 14px; border-radius: 7px; background: var(--accent); }
+.order .last .rank { color: var(--out); }
+.order .last .bar2 { background: var(--out); }
+.order p { font-size: 15px; color: var(--muted); margin-top: 6px; }
+.order .last p { color: var(--ink); font-weight: 600; }
+
+/* Cross-section */
+.xsec svg { width: 100%; min-width: 560px; height: auto; display: block; }
+.xsec .sky { fill: var(--placeholder); }
+.xsec .soil { fill: var(--bark); opacity: 0.32; }
+.xsec .grass { stroke: var(--accent); stroke-width: 4; }
+.xsec .water { fill: var(--water); opacity: 0.6; }
+.xsec .flood { stroke: var(--water); stroke-width: 3; stroke-dasharray: 8 6; }
+.xsec .conduit { fill: none; stroke: var(--ink); stroke-width: 3; }
+.xsec .cable { stroke: var(--glow); stroke-width: 6; stroke-linecap: round; }
+.xsec .pole { fill: var(--ink); }
+.xsec .wire2 { stroke: var(--ink); stroke-width: 3; }
+.xsec .hbody { fill: var(--glow); stroke: var(--ink); stroke-width: 2; }
+.xsec .hroof { fill: var(--ink); }
+.xsec .crown2 { fill: #3E7D4A; }
+.xsec .trunk2 { fill: #7A5232; }
+.xsec .switch { fill: var(--glow); stroke: var(--ink); stroke-width: 2; }
+.xsec .div { stroke: var(--rule); stroke-width: 2; stroke-dasharray: 6 6; }
+.xsec .t { fill: var(--ink); font: 700 17px var(--font-display); }
+.xsec .ts { fill: var(--ink); font: 600 13px var(--font-body); }
+
+/* Timeline */
+.storms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+@media (max-width: 1000px) { .storms { grid-template-columns: 1fr 1fr; } }
+.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.stat-row > div { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 24px 28px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.stat-row b { font-family: var(--font-display); font-size: clamp(40px, 6vw, 60px); line-height: 1; color: var(--accent); font-weight: 600; }
+.stat-row p { color: var(--muted); }
+@media (max-width: 640px) { .stat-row { grid-template-columns: 1fr; } }
+.dark-band .bar .lab { color: var(--on-storm-muted); }
+.dark-band .bar .lab b, .dark-band .val { color: var(--on-storm); }
+.dark-band .track { border-left-color: rgba(251,250,244,0.3); }
+.dark-band .fill.dim { background: var(--on-storm-muted); }
+.storms > * { min-width: 0; }
+@media (max-width: 760px) { .storms { grid-template-columns: 1fr; } }
+.storm { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 28px; display: grid; gap: 14px; align-content: start; }
+.storm .big { font-family: var(--font-display); font-size: 44px; line-height: 1; }
+.storm ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; }
+
+/* Bar charts */
+.chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 28px; display: grid; gap: 18px; }
+.chart h3 { font-size: 22px; }
+.bars { display: grid; gap: 14px; }
+.bar { display: grid; grid-template-columns: minmax(110px, 190px) 1fr; gap: 16px; align-items: center; }
+.bar > * { min-width: 0; }
+.bar .lab { font-size: 15px; color: var(--muted); line-height: 1.35; }
+.bar .lab b { color: var(--ink); display: block; font-family: var(--font-data); font-weight: 500; font-size: 14px; }
+.track { position: relative; height: 30px; background: transparent; border-left: 2px solid var(--rule); }
+.fill { height: 100%; background: var(--out); border-radius: 0 4px 4px 0; min-width: 4px; }
+.fill.dim { background: var(--dark-home); }
+.fill.good { background: var(--glow); }
+.dark-band .fill:not(.dim) { background: var(--storm-hot); }
+.val { font-family: var(--font-data); font-size: 14px; color: var(--ink); white-space: nowrap; }
+.bar .row { display: flex; align-items: center; gap: 10px; }
+.bar .row .track { flex: 1; }
+@media (max-width: 520px) { .bar { grid-template-columns: 1fr; gap: 6px; } }
+
+/* Key-number band */
+.dark-band { background: var(--storm); color: var(--on-storm); }
+.dark-band .eyebrow { color: var(--glow); }
+.dark-band .lede, .dark-band .prose { color: var(--on-storm-muted); }
+.dark-band .prose strong { color: var(--on-storm); }
+.versus { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; }
+.versus > * { min-width: 0; display: grid; gap: 8px; }
+.versus .n { font-family: var(--font-display); font-size: clamp(64px, 11vw, 136px); line-height: 0.95; font-weight: 600; }
+.versus .n small { font-size: 0.35em; letter-spacing: 1px; }
+.versus .a .n { color: var(--on-storm-muted); }
+.versus .b .n { color: var(--storm-hot); }
+.versus p { color: var(--on-storm-muted); font-size: 17px; max-width: 34ch; }
+@media (max-width: 640px) { .versus { grid-template-columns: 1fr; gap: 28px; } }
+.dark-band .src { color: var(--on-storm-muted); }
+
+/* Power path */
+.path { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.path > div { padding: 20px 20px 20px 0; border-top: 4px solid var(--rule); display: grid; gap: 8px; align-content: start; min-width: 0; }
+.path > div.weak { border-top-color: var(--out); }
+.path .step { font-family: var(--font-data); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+.path .weak .step { color: var(--out); }
+.path p { font-size: 15px; color: var(--muted); }
+@media (max-width: 760px) { .path { grid-template-columns: 1fr 1fr; row-gap: 12px; } }
+@media (max-width: 440px) { .path { grid-template-columns: 1fr; } }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.grid2 > * { min-width: 0; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+.cause { display: grid; gap: 8px; padding: 24px 0; border-top: 1px solid var(--rule); align-content: start; }
+.cause p { color: var(--muted); }
+.cause .k { font-family: var(--font-data); font-size: 13px; color: var(--bark); letter-spacing: 1px; text-transform: uppercase; }
+
+/* Calculator */
+.calc { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 28px; display: grid; gap: 22px; }
+.calc form { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 20px; }
+.calc form > * { min-width: 0; }
+@media (max-width: 760px) { .calc form { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 440px) { .calc form { grid-template-columns: 1fr; } }
+.calc label { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+.calc input { font: 500 17px var(--font-data); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 10px 12px; width: 100%; }
+.calc .out { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid var(--rule); padding-top: 20px; }
+.calc .out > * { min-width: 0; display: grid; gap: 4px; }
+.calc .out b { font-family: var(--font-display); font-size: 44px; line-height: 1; }
+.calc .out .total b { color: var(--accent); }
+.calc .out span { font-size: 14px; color: var(--muted); }
+@media (max-width: 520px) { .calc .out { grid-template-columns: 1fr; } }
+
+.harm { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 8px; }
+.harm b { color: var(--ink); }
+
+/* Solutions */
+.sol-head { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; }
+.sol-head .no { font-family: var(--font-display); font-size: 72px; line-height: 0.85; color: var(--accent); }
+.sol-head > div { display: grid; gap: 10px; min-width: 0; }
+
+.demo { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 24px; display: grid; gap: 16px; }
+.demo-svg { overflow-x: auto; }
+.demo svg { width: 100%; min-width: 520px; height: auto; display: block; }
+.demo .controls { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { font: 600 15px var(--font-body); padding: 10px 16px; border-radius: 6px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+.btn:hover { background: var(--placeholder); }
+.btn.primary { background: var(--ink); color: var(--bg); }
+.btn.primary:hover { opacity: 0.9; }
+.btn[aria-pressed="true"] { background: var(--glow); border-color: var(--glow); color: #14213D; }
+.status { font-family: var(--font-data); font-size: 15px; color: var(--ink); min-height: 1.6em; }
+.status .bad { color: var(--out); }
+svg .wire { stroke: var(--ink); stroke-width: 4; fill: none; }
+svg .wire.dead { stroke: var(--dark-home); stroke-dasharray: 6 6; }
+svg .tie { stroke: var(--muted); stroke-width: 3; stroke-dasharray: 8 6; fill: none; }
+svg .tie.on { stroke: var(--ink); stroke-dasharray: none; }
+svg .box { fill: var(--placeholder); stroke: var(--ink); stroke-width: 2; }
+svg .lbl { fill: var(--ink); font: 600 13px var(--font-body); }
+svg .lbl.s { fill: var(--muted); font: 500 12px var(--font-data); }
+svg .drop { stroke: var(--muted); stroke-width: 2; }
+svg .house .body { fill: var(--glow); stroke: var(--ink); stroke-width: 1.5; transition: fill .3s; }
+svg .house .roof { fill: var(--ink); }
+svg .house.off .body { fill: var(--dark-home); }
+svg .sw { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+svg .sw.open { fill: var(--out); stroke: var(--out); }
+svg .tree { opacity: 0; transition: opacity .3s; }
+svg .tree.show { opacity: 1; }
+svg .tree .crown { fill: #3E7D4A; }
+svg .tree .trunk { fill: #7A5232; }
+svg .fault { stroke: var(--out); stroke-width: 4; }
+
+table.cmp { width: 100%; border-collapse: collapse; font-size: 16px; background: var(--surface); }
+.tablewrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 10px; }
+table.cmp th, table.cmp td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+table.cmp tr:last-child td { border-bottom: none; }
+table.cmp th { font-family: var(--font-data); font-weight: 500; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+table.cmp td:first-child { font-weight: 600; white-space: nowrap; }
+table.cmp td { color: var(--muted); }
+table.cmp td:first-child { color: var(--ink); }
+
+.qa { display: grid; gap: 6px; padding: 20px 0; border-top: 1px solid var(--rule); }
+.qa .q { font-family: var(--font-display); font-size: 21px; }
+.qa p { color: var(--muted); }
+
+/* Smart switches: how they work and what they cost */
+#smart-switches { scroll-margin-top: 72px; }
+.subhead { display: grid; gap: 12px; max-width: 70ch; }
+.subhead h3 { font-size: clamp(24px, 3vw, 30px); }
+.subhead p { color: var(--muted); }
+.takeaway { border-left: 4px solid var(--accent); background: var(--leaf); padding: 16px 20px; border-radius: 0 10px 10px 0; color: var(--ink); max-width: 68ch; display: grid; gap: 6px; }
+.takeaway .tl { font-family: var(--font-data); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); }
+.takeaway p { color: var(--ink); }
+.takeaway .src a { color: var(--accent); }
+.intro-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: start; }
+.intro-grid > * { min-width: 0; }
+@media (max-width: 860px) { .intro-grid { grid-template-columns: 1fr; } }
+.anatomy { display: grid; gap: 16px; }
+.anatomy svg { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; }
+.anatomy .sky2 { fill: var(--placeholder); }
+.anatomy .pole3 { fill: var(--bark); }
+.anatomy .arm { fill: var(--ink); }
+.anatomy .ph3 { stroke: var(--ink); stroke-width: 2.5; fill: none; }
+.anatomy .vi { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+.anatomy .band3 { fill: var(--accent); }
+.anatomy .cab { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+.anatomy .cable2 { stroke: var(--ink); stroke-width: 2; stroke-dasharray: 5 4; fill: none; }
+.anatomy .ant { stroke: var(--ink); stroke-width: 2.5; }
+.anatomy .gnd { stroke: var(--accent); stroke-width: 4; }
+.anatomy .mk circle { fill: var(--ink); }
+.anatomy .mk text { fill: var(--bg); font: 600 14px var(--font-data); }
+.parts { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.parts li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; color: var(--muted); font-size: 15px; line-height: 1.45; }
+.parts .pn { width: 26px; height: 26px; border-radius: 50%; background: var(--ink); color: var(--bg); font: 600 13px var(--font-data); display: grid; place-items: center; }
+.parts b { color: var(--ink); }
+.faults { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.faults > div { padding: 26px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.faults > div + div { border-left: 1px solid var(--rule); }
+.faults .k { font-family: var(--font-data); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); }
+.faults .perm .k { color: var(--out); }
+.faults .big { font-family: var(--font-display); font-size: 44px; line-height: 1; color: var(--accent); font-weight: 600; }
+.faults .big small { display: block; font: 400 14px var(--font-body); color: var(--muted); margin-top: 6px; }
+.faults ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; }
+.faults p { color: var(--muted); }
+.faults p strong { color: var(--ink); }
+@media (max-width: 640px) { .faults { grid-template-columns: 1fr; } .faults > div + div { border-left: 0; border-top: 1px solid var(--rule); } }
+.flisr-wrap { display: grid; gap: 14px; border-top: 1px solid var(--rule); padding-top: 18px; }
+.flisr-wrap .tl { font-family: var(--font-data); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); }
+.flisr { list-style: none; margin: 0; padding: 0; counter-reset: f; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 24px; }
+.flisr li { counter-increment: f; display: grid; grid-template-columns: 28px 1fr; gap: 10px; font-size: 15px; color: var(--muted); line-height: 1.45; min-width: 0; }
+.flisr li::before { content: counter(f); width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--accent); color: var(--accent); font: 600 13px var(--font-data); display: grid; place-items: center; }
+@media (max-width: 860px) { .flisr { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .flisr { grid-template-columns: 1fr; } }
+.makers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.makers > div { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 22px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.makers h4 { margin: 0; font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--ink); }
+.makers .loc { font-family: var(--font-data); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+.makers p { color: var(--muted); font-size: 15px; }
+.makers p b { color: var(--ink); font-weight: 600; }
+@media (max-width: 860px) { .makers { grid-template-columns: 1fr; } }
+.ranges { display: grid; gap: 18px; }
+.rg { display: grid; grid-template-columns: minmax(150px, 250px) 1fr; gap: 18px; align-items: center; }
+.rg > * { min-width: 0; }
+.rg .lab b { display: block; color: var(--ink); font-size: 15px; font-weight: 700; }
+.rg .lab .rv { display: block; font: 500 14px var(--font-data); color: var(--ink); margin-top: 2px; }
+.rg .lab span:not(.rv) { display: block; font-size: 14px; color: var(--muted); line-height: 1.35; margin-top: 2px; }
+.rg .track2 { position: relative; height: 26px; border-left: 2px solid var(--rule); }
+.rg .span2 { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: var(--dark-home); }
+.rg.hl .span2 { background: var(--accent); }
+.rg.hl .lab b, .rg.hl .lab .rv { color: var(--accent); }
+.rg.axisrow { margin-top: -8px; }
+.axis2 { display: flex; justify-content: space-between; font: 500 12px var(--font-data); color: var(--muted); }
+@media (max-width: 520px) { .rg { grid-template-columns: 1fr; gap: 6px; } .rg.axisrow > div:first-child { display: none; } }
+.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.opts > div { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 26px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.opts > div.big-opt { border: 2px solid var(--accent); }
+.opts h4 { margin: 0; font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--ink); }
+.opts .count { font-family: var(--font-data); font-size: 14px; color: var(--ink); }
+.opts .cost { font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 36px); line-height: 1.05; font-weight: 600; color: var(--accent); }
+.opts .cost small { display: block; font: 400 14px var(--font-body); color: var(--muted); margin-top: 4px; }
+.opts p { color: var(--muted); font-size: 15px; }
+.opts ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 15px; display: grid; gap: 4px; }
+.dots { display: flex; flex-wrap: wrap; gap: 5px; }
+.dots i { width: 12px; height: 12px; border-radius: 3px; background: var(--accent); display: block; }
+.dots i.x { background: transparent; border: 2px dashed var(--accent); }
+@media (max-width: 760px) { .opts { grid-template-columns: 1fr; } }
+.factors { margin: 0; padding-left: 20px; color: var(--muted); display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; max-width: 760px; }
+@media (max-width: 560px) { .factors { grid-template-columns: 1fr; } }
+
+/* Ask */
+.ask { font-family: var(--font-display); font-size: clamp(28px, 4.2vw, 46px); line-height: 1.15; font-weight: 500; max-width: 26ch; text-wrap: balance; }
+.ask em { font-style: normal; color: var(--glow); }
+.ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.ladder > div { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 22px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.ladder > div.primary { background: var(--storm); border-color: var(--storm); color: var(--on-storm); }
+.ladder > div.primary p { color: var(--on-storm-muted); }
+.ladder > div.primary .eyebrow { color: var(--glow); }
+.ladder p { color: var(--muted); font-size: 15px; }
+@media (max-width: 900px) { .ladder { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .ladder { grid-template-columns: 1fr; } }
+
+.letter { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 24px; display: grid; gap: 14px; }
+.letter pre { white-space: pre-wrap; font: 15px/1.6 var(--font-body); color: var(--ink); margin: 0; background: var(--bg); border-radius: 6px; padding: 18px; max-height: 340px; overflow-y: auto; }
+.copied { font-size: 14px; color: var(--muted); }
+
+/* Research */
+.journey { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: j; }
+.journey li { border-top: 4px solid var(--glow); padding-top: 14px; display: grid; gap: 6px; align-content: start; min-width: 0; counter-increment: j; }
+.journey li::before { content: "Step " counter(j); font-family: var(--font-data); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); }
+.journey p { color: var(--muted); font-size: 15px; }
+@media (max-width: 860px) { .journey { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 440px) { .journey { grid-template-columns: 1fr; } }
+.shift { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.shift > div { padding: 24px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.shift > div + div { background: var(--storm); color: var(--on-storm); }
+.shift > div + div .eyebrow { color: var(--glow); }
+.shift ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.shift > div:first-child ul { color: var(--muted); }
+@media (max-width: 640px) { .shift { grid-template-columns: 1fr; } }
+.sources { margin: 0; padding-left: 20px; display: grid; gap: 8px; font-size: 15px; color: var(--muted); }
+.sources a { overflow-wrap: anywhere; }
+
+footer { background: var(--storm); color: var(--on-storm-muted); padding-block: 56px 40px; font-size: 15px; }
+footer .fgrid { display: grid; grid-template-columns: 1.4fr 1fr 1.4fr 1fr; gap: 32px; }
+footer .fgrid > div { display: grid; gap: 10px; align-content: start; min-width: 0; }
+footer h4 { margin: 0; font-family: var(--font-data); font-weight: 500; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--glow); }
+footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+footer ul li > a:only-child { display: inline-block; padding-block: 8px; }
+footer a { color: var(--on-storm); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer .fbrand { color: var(--on-storm); font-family: var(--font-display); font-size: 22px; font-weight: 600; }
+footer .fbrand span { color: var(--glow); }
+footer .sel { user-select: all; color: var(--on-storm); }
+footer .fine { grid-column: 1 / -1; border-top: 1px solid rgba(251,250,244,0.18); padding-top: 20px; font-size: 13px; }
+@media (max-width: 900px) { footer .fgrid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { footer .fgrid { grid-template-columns: 1fr; } }
+
+/* Website chrome: nav button and hero calls to action */
+.nav ul { flex: 1; }
+.nav-cta { flex: none; background: var(--glow); color: #1F2E24; font-weight: 700; font-size: 14px; padding: 8px 16px; border-radius: 999px; text-decoration: none; white-space: nowrap; }
+.nav-cta:hover { filter: brightness(1.06); }
+@media (max-width: 560px) {
+  .nav-cta { padding: 8px 14px; }
+  .nav-cta .long { display: none; }
+  .nav ul { -webkit-mask-image: linear-gradient(to right, #000 78%, transparent); mask-image: linear-gradient(to right, #000 78%, transparent); }
+}
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-cta, .btn-ghost { display: inline-flex; align-items: center; gap: 8px; font: 700 16px var(--font-body); padding: 13px 22px; border-radius: 999px; text-decoration: none; }
+.btn-cta { background: var(--glow); color: #1F2E24; }
+.btn-cta:hover { filter: brightness(1.06); }
+.btn-ghost { border: 2px solid rgba(251,250,244,0.6); color: var(--on-storm); }
+.btn-ghost:hover { background: rgba(251,250,244,0.1); }
+
+/* Problem tree */
+.ptree { display: grid; justify-items: center; }
+.ptree .tl { font-family: var(--font-data); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+.canopy { width: 100%; max-width: 980px; background: var(--leaf); border-radius: 46% 54% 42% 44% / 62% 58% 42% 38%; padding: 56px 48px 64px; display: grid; gap: 16px; justify-items: center; text-align: center; }
+.canopy .tl { color: var(--accent); }
+.leaves, .roots { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 820px; }
+.leaves span { background: var(--surface); border: 2px solid var(--accent); color: var(--ink); border-radius: 999px 999px 999px 6px; padding: 8px 16px; font-size: 15px; font-weight: 600; }
+.ptree > .trunk { width: min(300px, 80%); background: var(--bark); color: var(--surface); padding: 28px 24px; text-align: center; display: grid; gap: 8px; border-radius: 0 0 12px 12px; margin-top: -8px; }
+.ptree > .trunk p:last-child { font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.25; }
+.ptree > .trunk .tl { opacity: 0.85; }
+
+/* Dive underground: a sticky, scroll-driven scene */
+.dive { position: relative; height: 280vh; }
+.dive-stage { position: sticky; top: 68px; height: min(80vh, 700px); border-radius: 24px; overflow: hidden; background: #0D1116; color: #F5F5F7; box-shadow: 0 30px 60px rgba(0,0,0,0.18); }
+.dive-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.dive-top { position: absolute; left: clamp(20px, 3vw, 40px); top: clamp(20px, 3vw, 36px); display: grid; gap: 6px; max-width: 70%; }
+.dive-top .eyebrow { color: #F5B942; }
+.dive-top h3 { font-size: clamp(24px, 3.4vw, 40px); color: #F5F5F7; letter-spacing: -0.025em; }
+.dive-caps { position: absolute; left: clamp(20px, 3vw, 40px); right: clamp(20px, 3vw, 40px); bottom: clamp(24px, 4vw, 44px); min-height: 5.2em; }
+.dive-caps .dc { position: absolute; left: 0; bottom: 0; max-width: 34ch; font-family: var(--font-display); font-size: clamp(19px, 2.3vw, 28px); line-height: 1.25; letter-spacing: -0.015em; font-weight: 600; color: #F5F5F7; text-shadow: 0 2px 18px rgba(0,0,0,0.6); opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .6s cubic-bezier(.16,.84,.24,1); }
+.dive-caps .dc.on { opacity: 1; transform: none; }
+.dive-meter { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); width: 4px; height: 38%; border-radius: 4px; background: rgba(255,255,255,0.15); overflow: hidden; }
+.dive-meter i { display: block; width: 100%; height: 100%; background: linear-gradient(#F5B942, #6FCF97); transform-origin: top center; transform: scaleY(0); }
+.dive-svg .dv-wire { fill: none; stroke: #2B2F36; stroke-width: 4; }
+.dive-svg .dv-drop { fill: none; stroke: #2B2F36; stroke-width: 2.5; }
+.dive-svg .dv-pole rect { fill: #3A2C22; }
+.dive-svg .dv-houses polygon { fill: #23272E; }
+.dive-svg .dv-houses rect { fill: #2D323A; }
+.dive-svg .dv-windows rect { fill: #F5B942; transition: fill .35s ease; }
+.dive-svg.dark .dv-windows rect { fill: #1A1D22; }
+.dive-svg .dv-pebbles circle { fill: rgba(0,0,0,0.22); }
+.dive-svg .dv-trench { stroke: #1F1A16; stroke-width: 26; stroke-linecap: round; fill: none; }
+.dive-svg .dv-risers { stroke: #F5B942; stroke-width: 4; fill: none; opacity: 0; transition: opacity .5s ease; stroke-dasharray: 10 8; }
+.dive-svg.powered .dv-risers { opacity: 0.85; }
+.dive-svg .dv-cable { stroke: #F5B942; stroke-width: 7; stroke-linecap: round; fill: none; stroke-dasharray: 18 14; animation: dvflow 1s linear infinite; }
+.dive-svg .dv-cable-glow { stroke: #F5B942; stroke-width: 18; opacity: 0.55; fill: none; }
+.dive-svg .dv-risers { animation: dvflow 1s linear infinite reverse; }
+.dive-svg .dv-ruler line { stroke: rgba(255,255,255,0.55); stroke-width: 2; }
+.dive-svg .dv-ruler text { fill: rgba(255,255,255,0.8); font: 600 20px var(--font-body); }
+.dive-svg .dv-spark { opacity: 0; transition: opacity .2s ease; }
+.dive-svg.sparking .dv-spark { opacity: 1; animation: dvspark .35s steps(2) infinite; }
+@keyframes dvflow { to { stroke-dashoffset: -64; } }
+@keyframes dvspark { 50% { opacity: .2; } }
+@media (max-width: 640px) { .dive { height: 240vh; } .dive-stage { top: 60px; height: min(76vh, 600px); border-radius: 18px; } .dive-meter { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .dive { height: auto; }
+  .dive-stage { position: relative; top: 0; }
+  .dive-svg .dv-cable, .dive-svg .dv-risers, .dive-svg.sparking .dv-spark { animation: none; }
+}
+svg .tree .fall { transform-box: view-box; transform-origin: 413px 205px; }
+svg .tree.show .fall { animation: treefall .8s cubic-bezier(.55,0,.8,.2) both; }
+svg .tree .fault { opacity: 0; }
+svg .tree.show .fault { animation: faultin .3s ease .75s both; }
+@keyframes treefall { from { transform: rotate(27deg); } to { transform: rotate(0deg); } }
+@keyframes faultin { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { svg .tree.show .fall { animation: none; } svg .tree.show .fault { animation: none; opacity: 1; } }
+.ground { width: 100%; background: var(--soil); border-top: 4px solid var(--accent); border-radius: 0 0 12px 12px; padding: 0 24px 32px; display: grid; gap: 14px; justify-items: center; text-align: center; }
+.ground svg { width: min(520px, 100%); height: 56px; display: block; }
+.ground svg path { stroke: var(--bark); stroke-width: 6; fill: none; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.ground .tl { color: var(--bark); }
+.roots span { background: var(--surface); border: 2px solid var(--bark); color: var(--ink); border-radius: 6px; padding: 8px 14px; font-size: 15px; font-weight: 600; }
+@media (max-width: 640px) { .canopy { border-radius: 32px; padding: 32px 20px; } }
+
+/* Live outage map card */
+.livemap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: center; background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; padding: 28px; }
+.livemap > * { min-width: 0; }
+.livemap-text { display: grid; gap: 12px; }
+.livemap-text p:not(.eyebrow) { color: var(--muted); }
+.livemap-visual { position: relative; display: block; border-radius: 10px; overflow: hidden; }
+.livemap-visual svg { width: 100%; height: auto; display: block; }
+.livemap-visual .lm-bg { fill: var(--leaf); }
+.livemap-visual .lm-road { stroke: var(--surface); stroke-width: 6; fill: none; }
+.livemap-visual .lm-river { stroke: var(--water); stroke-width: 8; fill: none; opacity: 0.7; }
+.livemap-visual .lm-out { fill: var(--out); opacity: 0.25; }
+.livemap-visual .lm-dot { fill: var(--out); }
+.livemap-visual .lm-tag { position: absolute; right: 10px; bottom: 10px; background: var(--surface); color: var(--ink); font: 500 13px var(--font-data); padding: 4px 10px; border-radius: 999px; }
+.livemap-visual:hover .lm-tag { background: var(--glow); color: #1F2E24; }
+@media (max-width: 720px) { .livemap { grid-template-columns: 1fr; } }
+
+/* Email tool */
+#email { scroll-margin-top: 72px; }
+.composer { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 28px; display: grid; gap: 20px; min-width: 0; }
+.composer fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; min-width: 0; }
+.composer legend, .composer .flab { font-weight: 700; font-size: 15px; color: var(--ink); padding: 0; margin-bottom: 4px; }
+.who { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.who label { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: start; padding: 12px 14px; border: 2px solid var(--rule); border-radius: 10px; cursor: pointer; font-size: 14px; color: var(--muted); }
+.who label b { color: var(--ink); font-size: 15px; }
+.who input { margin-top: 3px; grid-row: span 2; accent-color: var(--accent); }
+.who label:has(input:checked) { border-color: var(--accent); background: var(--leaf); }
+@media (max-width: 520px) { .who { grid-template-columns: 1fr; } }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fields > * { min-width: 0; }
+.fields label { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+.fields .full { grid-column: 1 / -1; }
+.fields .check { display: flex; gap: 10px; align-items: center; color: var(--ink); }
+.fields .check input { width: 18px; height: 18px; accent-color: var(--accent); }
+@media (max-width: 520px) { .fields { grid-template-columns: 1fr; } }
+.composer input[type="text"], .composer input[type="email"], .composer select, .composer textarea { font: 16px var(--font-body); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; width: 100%; }
+.composer textarea { min-height: 84px; resize: vertical; }
+.tobox { display: grid; gap: 6px; }
+.tobox .note { font-size: 14px; color: var(--muted); }
+.preview { background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 16px 18px; display: grid; gap: 8px; }
+.preview .subj { font-weight: 700; font-size: 15px; }
+.preview pre { white-space: pre-wrap; font: 15px/1.6 var(--font-body); color: var(--ink); margin: 0; max-height: 320px; overflow-y: auto; }
+.send-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+a.btn { text-decoration: none; display: inline-flex; align-items: center; }
+
+/* ===== Redesign layer: quiet, premium, editorial. Soft whites and charcoal, one green accent, porch-light amber only where the power is "on". ===== */
+:root {
+  --bg: #FBFBF9; --alt: #F2F2EE; --surface: #FFFFFF; --ink: #1D1D1F; --muted: #5F5F64; --rule: #E2E2DC;
+  --accent: #2C7A4B; --glow: #F5B942; --bark: #8A5A33; --water: #4A8FC0; --storm: #0E0E10;
+  --on-storm: #F5F5F7; --on-storm-muted: #A7A7AD; --storm-hot: #FF8E74; --out: #C8412D;
+  --dark-home: #BDBDB7; --placeholder: #EEEEEA; --leaf: #E6F0E8; --soil: #F1EBE2;
+  --font-display: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 10px 30px rgba(0,0,0,0.05);
+  --radius: 22px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0B0B0C; --alt: #141416; --surface: #1C1C1E; --ink: #F5F5F7; --muted: #A7A7AD; --rule: #2C2C2F;
+    --accent: #6FCF97; --bark: #C9976A; --storm: #000000; --out: #FF7A64; --dark-home: #4A4A4E;
+    --placeholder: #1E1E21; --leaf: #18261D; --soil: #231D17; --shadow: 0 0 0 1px rgba(255,255,255,0.04); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0B0B0C; --alt: #141416; --surface: #1C1C1E; --ink: #F5F5F7; --muted: #A7A7AD; --rule: #2C2C2F;
+  --accent: #6FCF97; --bark: #C9976A; --storm: #000000; --out: #FF7A64; --dark-home: #4A4A4E;
+  --placeholder: #1E1E21; --leaf: #18261D; --soil: #231D17; --shadow: 0 0 0 1px rgba(255,255,255,0.04); color-scheme: dark;
+}
+body { font-size: 17px; line-height: 1.55; letter-spacing: -0.006em; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.022em; }
+h2 { font-size: clamp(34px, 5.2vw, 60px); font-weight: 600; line-height: 1.05; }
+h3 { font-size: 22px; letter-spacing: -0.012em; line-height: 1.2; }
+.eyebrow { font-family: var(--font-body); font-size: 14px; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--accent); }
+.lede { font-size: clamp(19px, 2vw, 23px); line-height: 1.45; color: var(--muted); }
+.src { font-size: 13px; }
+.wrap { max-width: 1180px; }
+
+/* Nav: frosted bar */
+body::before { background: rgba(251,251,249,0.86); }
+.nav { background: rgba(251,251,249,0.78); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--rule); }
+.nav .wrap { height: 52px; gap: 28px; }
+.nav .brand { font-family: var(--font-display); text-transform: none; letter-spacing: -0.01em; font-size: 18px; font-weight: 600; color: var(--ink); }
+.nav .brand span { color: var(--accent); }
+.nav a.l { color: var(--muted); font-size: 13px; }
+.nav a.l:hover { color: var(--ink); }
+.nav-cta { background: var(--accent); color: #FFFFFF; font-size: 13px; padding: 7px 14px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before, :root:not([data-theme="light"]) .nav { background: rgba(11,11,12,0.8); } :root:not([data-theme="light"]) .nav-cta { color: #0B0B0C; } }
+:root[data-theme="dark"] body::before, :root[data-theme="dark"] .nav { background: rgba(11,11,12,0.8); }
+:root[data-theme="dark"] .nav-cta { color: #0B0B0C; }
+
+/* Sections: rhythm of white, soft gray and black */
+.band { padding-block: clamp(80px, 11vw, 140px); }
+.band + .band { border-top: 0; }
+.band, #overview, #tree, #why, #hurt, section[aria-labelledby="ladder-h"] { background: var(--bg); }
+#problem, section[aria-labelledby="causes-h"], #solutions, #research { background: var(--alt); }
+.dark-band { background: var(--storm); }
+.band > .wrap > .head { text-align: center; justify-items: center; max-width: 880px; margin-inline: auto; gap: 18px; margin-bottom: 12px; }
+.band > .wrap > .head .lede { margin-inline: auto; }
+.stack { gap: 48px; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; background: radial-gradient(120% 70% at 50% 110%, rgba(245,185,66,0.16), transparent 60%), linear-gradient(180deg, #08080A 0%, #111114 100%); color: #F5F5F7; min-height: min(82vh, 800px); padding-block: clamp(96px, 14vh, 150px) 0; display: grid; grid-template-rows: 1fr auto; }
+.hero-inner { position: relative; z-index: 1; display: grid; justify-items: center; text-align: center; gap: 22px; align-content: start; }
+.hero .eyebrow { color: #F5B942; font-size: 15px; }
+.hero h1 { font-size: clamp(46px, 8.6vw, 112px); line-height: 0.98; letter-spacing: -0.035em; font-weight: 600; max-width: 12ch; color: #F5F5F7; }
+.hero h1 em { font-style: normal; background: linear-gradient(180deg, #FFD27A 0%, #F5B942 55%, #E08A2E 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-sub { font-size: clamp(19px, 2.2vw, 24px); line-height: 1.4; color: #B9B9BF; max-width: 34ch; }
+.hero .cta-row { justify-content: center; margin-top: 8px; }
+.btn-cta, .btn-ghost { font: 600 16px var(--font-body); padding: 13px 24px; }
+.btn-cta { background: #F5F5F7; color: #111114; }
+.btn-ghost { border: 1px solid rgba(245,245,247,0.4); color: #F5F5F7; }
+.hero-scene { position: relative; display: block; width: 100%; height: clamp(180px, 30vw, 360px); margin-top: clamp(32px, 6vh, 64px); }
+.hero-scene .hs-trees { fill: #17201A; }
+.hero-scene .hs-wire { fill: none; stroke: #4A4A50; stroke-width: 2; }
+.hero-scene .hs-pole rect { fill: #2A2A2E; }
+.hero-scene .hs-body { fill: #1A1A1D; }
+.hero-scene .hs-roof { fill: #232327; }
+.hero-scene .hs-ground { fill: #0B0B0C; }
+.hero-scene .win { fill: #F5B942; filter: drop-shadow(0 0 6px rgba(245,185,66,0.7)); }
+.hero-scene .win.off { fill: #2A2A2E; filter: none; }
+.hero-scene .flick { animation: flick 7s infinite; }
+.hero-scene .f1 { animation-delay: 1.6s; } .hero-scene .f2 { animation-delay: 3.1s; } .hero-scene .f3 { animation-delay: 4.7s; }
+@keyframes flick { 0%, 62%, 100% { fill: #F5B942; } 64%, 66% { fill: #2A2A2E; filter: none; } 65% { fill: #F5B942; } 68%, 90% { fill: #2A2A2E; filter: none; } }
+.hero-inner > * { animation: rise 0.9s cubic-bezier(.2,.7,.2,1) both; }
+.hero-inner > :nth-child(2) { animation-delay: .08s; } .hero-inner > :nth-child(3) { animation-delay: .16s; } .hero-inner > :nth-child(4) { animation-delay: .24s; }
+@keyframes rise { from { opacity: 0.35; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .hero-inner > *, .hero-scene .flick { animation: none; } }
+
+/* Overview */
+#overview .thesis { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+#overview .thesis p { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(24px, 3.4vw, 40px); font-size: clamp(18px, 1.8vw, 21px); line-height: 1.5; color: var(--muted); }
+#overview .thesis p b { display: block; font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 32px); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 10px; font-weight: 600; }
+@media (max-width: 760px) { #overview .thesis { grid-template-columns: 1fr; } }
+#overview .facts { grid-template-columns: repeat(4, 1fr); border-top: 0; margin: 0; gap: 0; }
+#overview .facts div { padding: 8px 24px; border-left: 1px solid var(--rule); text-align: center; justify-items: center; gap: 8px; }
+#overview .facts div:first-child { border-left: 0; }
+#overview .facts b { font-size: clamp(36px, 4.6vw, 56px); color: var(--ink); letter-spacing: -0.03em; }
+#overview .facts span { color: var(--muted); font-size: 15px; max-width: 22ch; }
+@media (max-width: 860px) { #overview .facts { grid-template-columns: 1fr 1fr; row-gap: 32px; } #overview .facts div:nth-child(3) { border-left: 0; } }
+@media (max-width: 420px) { #overview .facts { grid-template-columns: 1fr; } #overview .facts div { border-left: 0; } }
+#overview .byline { text-align: center; color: var(--muted); font-family: var(--font-body); font-size: 14px; letter-spacing: 0; text-transform: none; }
+.ov-media { display: grid; grid-template-columns: 1.6fr 1fr; gap: 24px; align-items: stretch; }
+.ov-media > * { min-width: 0; }
+@media (max-width: 860px) { .ov-media { grid-template-columns: 1fr; } }
+.ov-media .ph { aspect-ratio: 16 / 9; }
+.qr-card { background: var(--surface); border: 0; border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; flex-direction: column; align-items: flex-start; justify-content: center; gap: 18px; }
+.qr-box { box-shadow: inset 0 0 0 1px var(--rule); }
+.qr-text h3 { color: var(--ink); font-size: 24px; }
+.qr-text p { color: var(--muted); }
+.qr-text .eyebrow { color: var(--accent); }
+
+/* Cards: soft surfaces instead of outlines */
+.storm, .chart, .panel, .calc, .demo, .composer, .stat-row > div, .makers > div, .opts > div, .livemap, .ladder > div, .letter, .faults, .shift, .tablewrap { border: 0; border-radius: var(--radius); box-shadow: var(--shadow); background: var(--surface); }
+.opts > div.big-opt { box-shadow: inset 0 0 0 2px var(--accent), var(--shadow); }
+.livemap { box-shadow: inset 0 0 0 2px var(--accent), var(--shadow); }
+.ladder > div.primary { background: var(--storm); color: var(--on-storm); }
+.dark-band .storm, .dark-band .chart { background: #1C1C1E; }
+.storm { padding: 32px; }
+.storm .big { font-family: var(--font-display); font-size: clamp(38px, 4vw, 50px); letter-spacing: -0.03em; font-weight: 600; }
+.stat-row b { font-family: var(--font-display); letter-spacing: -0.03em; color: var(--ink); }
+.ph { border: 1.5px dashed var(--rule); background: var(--placeholder); border-radius: var(--radius); }
+.ph .tag { font-family: var(--font-body); letter-spacing: 0; text-transform: none; font-size: 13px; font-weight: 600; }
+.btn { border-radius: 999px; font-weight: 600; }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.composer input[type="text"], .composer input[type="email"], .composer select, .composer textarea, .calc input { border-radius: 12px; background: var(--alt); border-color: transparent; }
+table.cmp th { font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 600; }
+.cause { border-top: 1px solid var(--rule); padding: 28px 0; }
+.cause .k, .faults .k, .makers .loc, .path .step, .journey li::before, .ptree .tl, .takeaway .tl, .flisr-wrap .tl { font-family: var(--font-body); letter-spacing: 0; text-transform: none; font-weight: 600; font-size: 13px; }
+.sol-head .no { font-family: var(--font-display); font-size: clamp(64px, 8vw, 96px); font-weight: 600; letter-spacing: -0.04em; }
+.takeaway { border-radius: 0 16px 16px 0; }
+
+/* Key-number band */
+.versus .n { font-family: var(--font-display); letter-spacing: -0.04em; }
+.ask { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; font-size: clamp(32px, 4.8vw, 58px); line-height: 1.08; max-width: 22ch; }
+.ask em { color: #F5B942; }
+#action .head { text-align: left; justify-items: start; max-width: none; }
+
+/* Problem tree on the new palette */
+.canopy { box-shadow: none; }
+
+/* Footer: quiet and small, like a product page */
+footer { background: var(--alt); color: var(--muted); padding-block: 56px 36px; font-size: 14px; border-top: 1px solid var(--rule); }
+footer h4 { color: var(--ink); font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 600; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--ink); }
+footer .fbrand { color: var(--ink); }
+footer .fbrand span { color: var(--accent); }
+footer .sel { color: var(--ink); }
+footer .fine { border-top: 1px solid var(--rule); }
+
+/* Gentle scroll-in for section heads (visible at rest; only a small lift) */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.pre { transform: translateY(14px); }
+}
+
+/* ===== Motion: scroll-driven, product-page style. Everything is fully visible at rest; motion only plays as things scroll into view. ===== */
+.scroll-progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: linear-gradient(90deg, var(--accent), var(--glow)); transform-origin: left center; transform: scaleX(0); pointer-events: none; }
+.ask .sweep { --p: 100%; background: linear-gradient(90deg, #F5F5F7 var(--p), #3C3C40 var(--p)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ask .sweep em { color: transparent; transition: color .6s ease; }
+.ask .sweep.done em { color: #F5B942; }
+@media (prefers-reduced-motion: no-preference) {
+  .a-el { transition: transform 1s cubic-bezier(.16,.84,.24,1), opacity .9s ease; will-change: transform; }
+  .a-pre { transform: translateY(44px) scale(.97); opacity: .3; }
+  .grow-el .fill, .grow-el .bar2, .grow-el .span2 { transform-origin: left center; transition: transform 1.3s cubic-bezier(.16,.84,.24,1); }
+  .grow-pre .fill, .grow-pre .bar2, .grow-pre .span2 { transform: scaleX(0); }
+  .waffle i { transition: transform .55s cubic-bezier(.34,1.56,.64,1), opacity .4s ease; }
+  .waffle.w-pre i { transform: scale(.2); opacity: .15; }
+  .ptree .leaves span, .ptree .roots span, .ptree .trunk { transition: transform .7s cubic-bezier(.34,1.4,.64,1), opacity .5s ease; }
+  .ptree.t-pre .leaves span, .ptree.t-pre .roots span { transform: translateY(18px) scale(.86); opacity: .25; }
+  .ptree.t-pre .trunk { transform: scaleY(.6); transform-origin: top center; opacity: .4; }
+  .ptree .ground svg path { stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 1.6s cubic-bezier(.16,.84,.24,1); }
+  .ptree.t-pre .ground svg path { stroke-dashoffset: 1; }
+  .path > div { transition: border-top-color .6s ease; }
+  .path.p-pre > div { border-top-color: var(--rule) !important; }
+  .hero-scene .win { transition: fill .4s ease, filter .4s ease; }
+  .hero-scene .win.dark-pre { fill: #2A2A2E; filter: none; }
+  .hero-inner, .hero-scene { will-change: transform; }
+  .m-grid img, .m-grid video, .livemap-visual svg { transition: transform .8s cubic-bezier(.16,.84,.24,1); }
+  .livemap-visual:hover svg, .m-grid img:hover { transform: scale(1.03); }
+  .storm, .stat-row > div, .makers > div, .opts > div, .ladder > div { transition: transform .5s cubic-bezier(.16,.84,.24,1), box-shadow .5s ease, opacity .9s ease; }
+  .storm:hover, .stat-row > div:hover, .makers > div:hover, .opts > div:hover, .ladder > div:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 18px 40px rgba(0,0,0,0.09); }
+  .btn-cta, .btn-ghost, .nav-cta, .btn, .ph-btn { transition: transform .25s ease, filter .25s ease, background .25s ease; }
+  .btn-cta:hover, .btn-ghost:hover, .nav-cta:hover { transform: scale(1.04); }
+}
+
+/* ===== Diagram system: one palette and one label style for every technical diagram =====
+   Amber = energized (power flowing), gray dashed = no power, red = fault, blue dotted = switch-to-switch radio link,
+   filled square = switch closed, hollow square = switch open. Text labels always repeat what color shows. */
+:root {
+  --dg-bg: #F7F7F4; --dg-dot: rgba(29,29,31,0.08); --dg-ink: #2A2A2E; --dg-line: #48484E; --dg-muted: #6E6E73;
+  --dg-dead: #BDBDB6; --dg-live: #D98A06; --dg-glow: rgba(245,185,66,0.35); --dg-fault: #D23B2C; --dg-ok: #2C8A55;
+  --dg-comm: #2F6FEB; --dg-fill: #FFFFFF; --dg-soft: #E9E9E3; --dg-tree: #3F7A4C; --dg-tree2: #4F8C5B; --dg-wood: #8A5A33;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --dg-bg: #121214; --dg-dot: rgba(255,255,255,0.06); --dg-ink: #ECECEE; --dg-line: #C9C9CE; --dg-muted: #A1A1A6;
+    --dg-dead: #4C4C51; --dg-live: #F5B942; --dg-glow: rgba(245,185,66,0.3); --dg-fault: #FF6E5E; --dg-ok: #5DD39A;
+    --dg-comm: #73A3FF; --dg-fill: #1C1C1F; --dg-soft: #2A2A2E; --dg-tree: #3E7B4D; --dg-tree2: #4C8C5B; --dg-wood: #B5814F;
+  }
+}
+:root[data-theme="dark"] {
+  --dg-bg: #121214; --dg-dot: rgba(255,255,255,0.06); --dg-ink: #ECECEE; --dg-line: #C9C9CE; --dg-muted: #A1A1A6;
+  --dg-dead: #4C4C51; --dg-live: #F5B942; --dg-glow: rgba(245,185,66,0.3); --dg-fault: #FF6E5E; --dg-ok: #5DD39A;
+  --dg-comm: #73A3FF; --dg-fill: #1C1C1F; --dg-soft: #2A2A2E; --dg-tree: #3E7B4D; --dg-tree2: #4C8C5B; --dg-wood: #B5814F;
+}
+.dgf { grid-template-columns: minmax(0, 1fr); background-color: var(--dg-bg); background-image: radial-gradient(var(--dg-dot) 1px, transparent 1.2px); background-size: 18px 18px; border-radius: 18px; padding: clamp(14px, 2.4vw, 24px); display: grid; gap: 14px; min-width: 0; box-shadow: inset 0 0 0 1px var(--rule); }
+.dg-head > * { min-width: 0; }
+@media (max-width: 640px) { .dg-head { display: grid !important; grid-template-columns: minmax(0, 1fr); justify-items: start; } .dg-legend { width: 100%; } .dg-count { margin-left: 0; width: 100%; } }
+.dg-head { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
+.dg-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--dg-muted); }
+.dg-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.demo .dg-legend svg { min-width: 0; width: auto; height: auto; display: inline-block; }
+.dg-legend .lg-live { stroke: var(--dg-live); stroke-width: 4; stroke-linecap: round; }
+.dg-legend .lg-dead { stroke: var(--dg-dead); stroke-width: 3; stroke-dasharray: 5 4; }
+.dg-legend .lg-comm { stroke: var(--dg-comm); stroke-width: 2.5; stroke-dasharray: 1 5; stroke-linecap: round; }
+.dg-legend .lg-fault { stroke: var(--dg-fault); stroke-width: 2.5; stroke-linecap: round; }
+.dg-legend .lg-closed { fill: var(--dg-ink); }
+.dg-legend .lg-open { fill: var(--dg-fill); stroke: var(--dg-ink); stroke-width: 1.6; }
+.dg-btns, .dg-ctrl { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.dg-btn { font: 600 14px var(--font-body); padding: 9px 16px; border-radius: 999px; border: 1px solid var(--dg-ink); background: var(--dg-ink); color: var(--dg-bg); cursor: pointer; min-height: 40px; transition: transform .2s ease, background .2s ease; }
+.dg-btn.ghost { background: transparent; color: var(--dg-ink); border-color: var(--rule); }
+.dg-btn[aria-pressed="true"] { background: var(--dg-fault); border-color: var(--dg-fault); color: #fff; }
+.dg-btn:hover { transform: translateY(-1px); }
+.dg-btn:disabled { opacity: .45; cursor: default; transform: none; }
+.dg-seg { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; border-radius: 999px; background: var(--dg-soft); }
+.dg-seg button { font: 600 13px var(--font-body); border: 0; background: transparent; color: var(--dg-muted); padding: 8px 14px; border-radius: 999px; cursor: pointer; min-height: 36px; }
+.dg-seg button.on { background: var(--dg-fill); color: var(--dg-ink); box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+.dg-scroll { min-width: 0; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-inline: -4px; padding-inline: 4px; }
+.dg-status { font-size: 15px; line-height: 1.5; color: var(--dg-ink); min-height: 3em; max-width: 72ch; }
+.dg-count { margin-left: auto; font: 600 14px var(--font-body); color: var(--dg-ink); font-variant-numeric: tabular-nums; }
+.dg-count b { color: var(--dg-live); }
+svg.dg { display: block; width: 100%; height: auto; }
+svg.dg text { font-family: var(--font-body); }
+svg.dg .dg-lbl { font-size: 17px; font-weight: 600; fill: var(--dg-ink); letter-spacing: -0.01em; }
+svg.dg .dg-lbl.s { font-size: 15px; }
+svg.dg .dg-sub { font-size: 13px; fill: var(--dg-muted); }
+svg.dg .dg-tag { font-size: 12px; font-weight: 700; fill: var(--dg-fault); letter-spacing: 0.02em; }
+@keyframes dgflow { to { stroke-dashoffset: -40; } }
+@keyframes dgflowrev { to { stroke-dashoffset: 40; } }
+@keyframes dgpulse { 0% { opacity: .9; transform: scale(.6); } 100% { opacity: 0; transform: scale(1.6); } }
+@keyframes dgblink { 50% { opacity: .25; } }
+
+/* Plant to porch */
+.p2p-wrap { margin-top: 4px; }
+.demo, .demo > *, .stack > *, .panel > * { min-width: 0; }
+.p2p { min-width: 760px; }
+.p2p .dg-ground { stroke: var(--dg-line); stroke-width: 1.5; opacity: .5; }
+.p2p .dg-hl { fill: var(--dg-live); opacity: 0; transition: opacity .4s ease; }
+.p2p .stage { transition: opacity .45s ease; }
+.p2p[data-focus] .stage { opacity: .28; }
+.p2p[data-focus="1"] .stage[data-stage="1"], .p2p[data-focus="2"] .stage[data-stage="2"], .p2p[data-focus="3"] .stage[data-stage="3"], .p2p[data-focus="4"] .stage[data-stage="4"] { opacity: 1; }
+.p2p[data-focus="1"] .stage[data-stage="1"] .dg-hl, .p2p[data-focus="2"] .stage[data-stage="2"] .dg-hl, .p2p[data-focus="3"] .stage[data-stage="3"] .dg-hl, .p2p[data-focus="4"] .stage[data-stage="4"] .dg-hl { opacity: .08; }
+.p2p .dg-body { fill: var(--dg-soft); stroke: var(--dg-line); stroke-width: 1.5; }
+.p2p .dg-detail { stroke: var(--dg-line); stroke-width: 1; opacity: .45; fill: none; }
+.p2p .dg-pipe { stroke: var(--dg-muted); stroke-width: 5; }
+.p2p .dg-xfmr rect { fill: var(--dg-soft); stroke: var(--dg-line); stroke-width: 1.5; }
+.p2p .dg-xfmr path { stroke: var(--dg-line); stroke-width: 1; opacity: .5; }
+.p2p .dg-steel, .p2p .dg-tower path { stroke: var(--dg-line); stroke-width: 1.6; fill: none; stroke-linejoin: round; }
+.p2p .dg-fence { fill: none; stroke: var(--dg-muted); stroke-width: 1.2; stroke-dasharray: 2 4; }
+.p2p .dg-gear rect { fill: var(--dg-fill); stroke: var(--dg-line); stroke-width: 1.5; }
+.p2p .dg-gear path { stroke: var(--dg-line); stroke-width: 1; opacity: .5; }
+.p2p .dg-gear circle { fill: var(--dg-ok); }
+.p2p .dg-pole path { stroke: var(--dg-wood); stroke-width: 5; stroke-linecap: round; }
+.p2p .dg-pole circle { fill: var(--dg-fill); stroke: var(--dg-line); stroke-width: 1.2; }
+.p2p .dg-pole .can { fill: var(--dg-soft); stroke: var(--dg-line); stroke-width: 1.2; }
+.p2p .dg-neutral { fill: none; stroke: var(--dg-line); stroke-width: 1; opacity: .35; }
+.p2p .dg-treeg circle { fill: var(--dg-tree); opacity: .92; }
+.p2p .dg-treeg .trk { fill: var(--dg-wood); }
+.p2p .dg-house path { fill: var(--dg-line); }
+.p2p .dg-house rect { fill: var(--dg-fill); stroke: var(--dg-line); stroke-width: 1.4; }
+.p2p .dg-house .w { fill: var(--dg-live); stroke: none; transition: fill .5s ease; }
+.p2p .dg-badge { opacity: 0; transition: opacity .4s ease; }
+.p2p .dg-badge rect { fill: var(--dg-fault); }
+.p2p .dg-badge text { fill: #fff; font-size: 12px; font-weight: 700; }
+.p2p .dg-fault { opacity: 0; }
+.p2p .dg-fault circle { fill: var(--dg-fill); stroke: var(--dg-fault); stroke-width: 2.5; }
+.p2p .dg-fault path { stroke: var(--dg-fault); stroke-width: 3; stroke-linecap: round; }
+.dg .dg-wire { fill: none; stroke: var(--dg-live); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 10 10; animation: dgflow 1.6s linear infinite; transition: stroke .5s ease; }
+.dg .dg-wire.thin { stroke-width: 1.6; }
+.p2p.faulted #p2pDown .dg-wire { stroke: var(--dg-dead); animation: none; stroke-dasharray: 5 5; }
+.p2p.faulted #p2pDown + .dg-neutral { opacity: .2; }
+.p2p.faulted .dg-house .w { fill: var(--dg-dead); }
+.p2p.faulted .dg-fault { opacity: 1; animation: dgblink 1s ease 2; }
+.p2p.faulted .dg-badge { opacity: 1; }
+.p2p.boot .dg-wire { stroke: var(--dg-dead); animation: none; }
+.p2p.boot.b1 .stage[data-stage="1"] .dg-wire, .p2p.boot.b2 .stage[data-stage="2"] .dg-wire, .p2p.boot.b3 .stage[data-stage="3"] .dg-wire, .p2p.boot.b4 .stage[data-stage="4"] .dg-wire { stroke: var(--dg-live); animation: dgflow 1.6s linear infinite; }
+.path > div[role="button"] { cursor: pointer; border-radius: 12px; padding: 18px 16px 16px; transition: background .3s ease, border-color .3s ease, transform .3s ease; }
+.path > div[role="button"]:hover { background: var(--dg-soft); }
+.path > div[role="button"][aria-pressed="true"] { background: var(--surface); box-shadow: var(--shadow); border-top-color: var(--dg-live); }
+.path > div.weak[role="button"][aria-pressed="true"] { border-top-color: var(--out); }
+.path > div[role="button"]:focus-visible { outline: 3px solid var(--glow); outline-offset: 2px; }
+
+/* Smart switch anatomy */
+.anat .an-cond { stroke: var(--dg-live); stroke-width: 2.5; fill: none; stroke-dasharray: 10 10; animation: dgflow 1.6s linear infinite; }
+.anat .an-pole { fill: var(--dg-wood); }
+.anat .an-grain { stroke: rgba(0,0,0,0.18); stroke-width: 1; fill: none; }
+.anat .an-arm, .anat .an-frame { fill: var(--dg-line); }
+.anat .an-brace { stroke: var(--dg-line); stroke-width: 4; stroke-linecap: round; }
+.anat .an-ins path { stroke: var(--dg-line); stroke-width: 2; }
+.anat .an-ins ellipse { fill: var(--dg-soft); stroke: var(--dg-line); stroke-width: 1.2; }
+.anat .an-jump { stroke: var(--dg-line); stroke-width: 2; fill: none; }
+.anat .an-vi ellipse { fill: var(--dg-soft); stroke: var(--dg-line); stroke-width: 1.2; }
+.anat .an-vi rect { fill: var(--dg-fill); stroke: var(--dg-line); stroke-width: 1.6; }
+.anat .an-vi .band { fill: var(--accent); stroke: none; }
+.anat .an-cable { stroke: var(--dg-ink); stroke-width: 2; stroke-dasharray: 4 3; fill: none; }
+.anat .an-cab { fill: var(--dg-soft); stroke: var(--dg-line); stroke-width: 1.6; }
+.anat .an-seam { stroke: var(--dg-line); stroke-width: 1; opacity: .5; }
+.anat .an-disp { fill: var(--dg-ink); }
+.anat .an-led { fill: var(--dg-ok); animation: dgblink 2.4s ease infinite; }
+.anat .an-handle { fill: var(--dg-line); }
+.anat .an-strap { stroke: var(--dg-line); stroke-width: 3; }
+.anat .an-mast { stroke: var(--dg-line); stroke-width: 3; stroke-linecap: round; }
+.anat .an-tip { fill: var(--dg-line); }
+.anat .an-wave { stroke: var(--dg-comm); stroke-width: 2.2; fill: none; stroke-linecap: round; animation: dgblink 1.8s ease infinite; }
+.anat .an-gnd { stroke: var(--accent); stroke-width: 4; }
+.anat .an-hl { fill: var(--dg-live); opacity: 0; transition: opacity .3s ease; }
+.anat .part, .anat .mk { transition: opacity .3s ease; }
+.anat .mk { cursor: pointer; }
+.anat .mk .lead { stroke: var(--dg-ink); stroke-width: 1.2; stroke-dasharray: 2 3; }
+.anat .mk circle { fill: var(--dg-ink); }
+.anat .mk text { fill: var(--dg-bg); font: 600 14px var(--font-data); }
+.anat[data-on] .part, .anat[data-on] .mk { opacity: .3; }
+.anat[data-on="1"] [data-part="1"], .anat[data-on="2"] [data-part="2"], .anat[data-on="3"] [data-part="3"], .anat[data-on="4"] [data-part="4"] { opacity: 1; }
+.anat[data-on="1"] .part[data-part="1"] .an-hl, .anat[data-on="2"] .part[data-part="2"] .an-hl, .anat[data-on="3"] .part[data-part="3"] .an-hl, .anat[data-on="4"] .part[data-part="4"] .an-hl { opacity: .14; }
+.anatomy .parts li { cursor: pointer; border-radius: 10px; padding: 6px 8px; margin: -6px -8px; transition: background .25s ease; }
+.anatomy .parts li:hover, .anatomy .parts li.on { background: var(--dg-soft); }
+.anatomy .parts li:focus-visible { outline: 3px solid var(--glow); }
+
+/* Self-healing line (FLISR) */
+.fl { min-width: 760px; }
+@media (max-width: 640px) { .fl, .p2p { min-width: 640px; } .dg-seg { border-radius: 16px; width: 100%; } .dg-seg button { flex: 1 1 auto; } .dg-scroll::after { content: "Swipe sideways to see the whole line →"; display: block; font-size: 12px; color: var(--dg-muted); padding-top: 6px; position: sticky; left: 0; } }
+.fl .fl-src rect { fill: var(--dg-fill); stroke: var(--dg-line); stroke-width: 1.6; }
+.fl .fl-src-x { fill: none; stroke: var(--dg-line); stroke-width: 1.4; }
+.fl .fl-wire { stroke: var(--dg-line); stroke-width: 4; fill: none; transition: stroke .4s ease; }
+.fl .fl-wire.dead { stroke: var(--dg-dead); stroke-dasharray: 6 6; }
+.fl .fl-flow { stroke: var(--dg-live); stroke-width: 4; fill: none; stroke-dasharray: 12 8; opacity: 0; transition: opacity .35s ease; animation: dgflow 1.1s linear infinite; }
+.fl .fl-flow.rev { animation-name: dgflowrev; }
+.fl .fl-flow.on { opacity: 1; }
+.fl .fl-sec { font-size: 13px; fill: var(--dg-muted); font-weight: 600; }
+.fl .fl-tap { stroke: var(--dg-line); stroke-width: 2; transition: stroke .4s ease; }
+.fl .fl-tap.dead { stroke: var(--dg-dead); stroke-dasharray: 4 4; }
+.fl .fl-house path { fill: var(--dg-line); }
+.fl .fl-house rect { fill: var(--dg-fill); stroke: var(--dg-line); stroke-width: 1.4; }
+.fl .fl-house .w { fill: var(--dg-live); stroke: none; transition: fill .4s ease; }
+.fl .fl-house.off .w { fill: var(--dg-dead); }
+.fl .fl-ground { stroke: var(--dg-line); stroke-width: 1.2; opacity: .3; }
+.fl .fl-sw rect { fill: var(--dg-ink); stroke: var(--dg-ink); stroke-width: 2; transition: fill .25s ease; }
+.fl .fl-sw.open rect { fill: var(--dg-fill); }
+.fl .fl-sw.lock rect { stroke: var(--dg-fault); fill: var(--dg-fill); }
+.fl .fl-sw.absent { opacity: 0; }
+.fl .fl-swl { font-size: 13px; font-weight: 700; fill: var(--dg-ink); }
+.fl .fl-sws { font: 500 11px var(--font-data); fill: var(--dg-muted); letter-spacing: .04em; }
+.fl .fl-sw.lock .fl-sws { fill: var(--dg-fault); }
+.fl .fl-comm { fill: none; stroke: var(--dg-comm); stroke-width: 2.4; stroke-dasharray: 1 7; stroke-linecap: round; opacity: 0; transition: opacity .3s ease; }
+.fl.comm .fl-comm { opacity: 1; animation: dgflow .9s linear infinite; }
+.fl .fl-sense { fill: none; stroke: var(--dg-live); stroke-width: 3; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.fl.sense .fl-sense { animation: dgpulse 1s ease-out infinite; }
+.fl .fl-x, .fl .fl-arc, .fl .fl-tree, .fl .fl-branch { opacity: 0; transition: opacity .3s ease; }
+.fl .fl-x circle { fill: var(--dg-fill); stroke: var(--dg-fault); stroke-width: 2.5; }
+.fl .fl-x path { stroke: var(--dg-fault); stroke-width: 3; stroke-linecap: round; }
+.fl .fl-arc circle { fill: var(--dg-glow); }
+.fl .fl-arc path { fill: var(--dg-live); }
+.fl.arc .fl-arc { opacity: 1; animation: dgblink .3s steps(2) infinite; }
+.fl.xmark .fl-x { opacity: 1; }
+.fl .fl-tree circle, .fl .fl-branch circle { fill: var(--dg-tree); }
+.fl .fl-tree .trk, .fl .fl-branch .trk { fill: var(--dg-wood); }
+.fl .fl-tree .fall { transform-box: view-box; transform-origin: 501px 300px; transition: transform .8s cubic-bezier(.55,0,.8,.2); }
+.fl.tree .fl-tree { opacity: 1; }
+.fl.tree .fl-tree .fall { transform: rotate(-26deg); }
+.fl.branch .fl-branch { opacity: 1; }
+.dg-steps { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; flex-wrap: wrap; counter-reset: st; }
+.dg-steps li { counter-increment: st; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--dg-muted); padding: 6px 12px 6px 6px; border-radius: 999px; background: var(--dg-soft); cursor: pointer; transition: background .3s ease, color .3s ease; }
+.dg-steps li::before { content: counter(st); width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 600 12px var(--font-data); background: var(--dg-fill); color: var(--dg-muted); }
+.dg-steps li.done { color: var(--dg-ink); }
+.dg-steps li.done::before { background: var(--dg-line); color: var(--dg-bg); }
+.dg-steps li.on { background: var(--dg-ink); color: var(--dg-bg); }
+.dg-steps li.on::before { background: var(--dg-live); color: #1D1D1F; }
+
+/* Restoration network */
+.restore-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; align-items: center; }
+@media (max-width: 860px) { .restore-grid { grid-template-columns: 1fr; } }
+.rs .rs-line { fill: none; stroke: var(--dg-live); stroke-width: 4; stroke-linejoin: round; transition: stroke .6s ease; }
+.rs .rs-line.thick { stroke-width: 7; }
+.rs .rs-line.thin { stroke-width: 2.5; }
+.rs .rs-sub { fill: var(--dg-fill); stroke: var(--dg-line); stroke-width: 1.6; }
+.rs .rs-ico rect, .rs .rs-ico path:not(.rs-cross):not(.rs-win) { fill: var(--dg-fill); stroke: var(--dg-line); stroke-width: 1.4; transition: fill .6s ease; }
+.rs .rs-ico path:not(.rs-cross):not(.rs-win) { fill: var(--dg-line); }
+.rs .rs-cross { stroke: var(--dg-fault); stroke-width: 5; }
+.rs .rs-win { stroke: var(--dg-live); stroke-width: 3; transition: stroke .6s ease; }
+.rs .rs-trees circle { fill: var(--dg-tree); opacity: .85; }
+.rs .rs-badge circle { fill: var(--dg-ink); transition: fill .4s ease; }
+.rs .rs-badge.last circle { fill: var(--dg-fault); }
+.rs .rs-badge text { fill: var(--dg-bg); font: 600 13px var(--font-data); }
+.rs .rs-badge { transform-box: fill-box; transform-origin: center; transition: transform .5s cubic-bezier(.34,1.56,.64,1), opacity .4s ease; }
+.rs.seq [data-n].rs-line { stroke: var(--dg-dead); stroke-dasharray: 6 6; }
+.rs.seq .rs-badge { opacity: .25; transform: scale(.7); }
+.rs.seq .rs-win { stroke: var(--dg-dead); }
+.rs.seq.s1 [data-n="1"].rs-line, .rs.seq.s2 [data-n="2"].rs-line, .rs.seq.s3 [data-n="3"].rs-line, .rs.seq.s4 [data-n="4"].rs-line { stroke: var(--dg-live); stroke-dasharray: none; }
+.rs.seq.s1 .rs-badge[data-n="1"], .rs.seq.s2 .rs-badge[data-n="2"], .rs.seq.s3 .rs-badge[data-n="3"], .rs.seq.s4 .rs-badge[data-n="4"] { opacity: 1; transform: none; }
+.rs.seq.s2 [data-n="2"] .rs-win { stroke: var(--dg-live); }
+
+@media (prefers-reduced-motion: reduce) {
+  .dg .dg-wire, .anat .an-cond, .fl .fl-flow, .fl.comm .fl-comm, .fl.sense .fl-sense, .fl.arc .fl-arc, .anat .an-led, .anat .an-wave { animation: none !important; }
+  .fl .fl-tree .fall { transition: none; }
+}
+
+.ov-media{grid-template-columns:minmax(0,1fr)!important;max-width:560px}
+#hurt .stack>.calc{max-width:760px}
+</style>
+<nav aria-label="Sections" class="nav" data-own="">
+<div class="wrap">
+<a class="brand" href="#top">Lights <span>On</span></a>
+<ul>
+<li><a class="l" href="#problem">The problem</a></li>
+<li><a class="l" href="#why">Why it happens</a></li>
+<li><a class="l" href="#hurt">Who gets hurt</a></li>
+<li><a class="l" href="#solutions">Solutions</a></li>
+</ul>
+<a class="nav-cta" href="#email">Email<span class="long"> a decision-maker</span></a>
+</div>
+</nav>
+<header class="hero" data-own="" id="top">
+<div class="wrap hero-inner">
+<p class="eyebrow">Humanities Civic Action Plan · Oakville, Missouri</p>
+<h1>Keeping South County’s <em>lights on.</em></h1>
+<p class="hero-sub">Some Oakville streets lose power for days in nearly every major storm. Here’s why it keeps happening, and two fixes that already work elsewhere.</p>
+<div class="cta-row">
+<a class="btn-cta" href="#email">Email a decision-maker</a>
+<a class="btn-ghost" href="#solutions">See the solutions</a>
+</div>
+</div>
+<svg aria-hidden="true" class="hero-scene" preserveaspectratio="xMidYMax slice" viewbox="0 0 1440 360">
+<defs>
+<radialgradient cx="50%" cy="100%" id="glowG" r="60%"><stop offset="0" stop-color="#F5B942" stop-opacity="0.22"></stop><stop offset="1" stop-color="#F5B942" stop-opacity="0"></stop></radialgradient>
+</defs>
+<rect fill="url(#glowG)" height="240" width="1440" x="0" y="120"></rect>
+<path class="hs-trees" d="M0 300 C40 250 70 262 100 240 C130 200 170 220 200 236 C240 190 280 206 320 230 C360 196 410 214 450 238 C500 200 560 210 600 236 C650 190 700 204 740 232 C790 196 850 210 900 236 C950 192 1010 206 1060 232 C1110 198 1170 214 1220 238 C1270 200 1330 212 1380 236 C1410 222 1430 228 1440 232 L1440 360 L0 360 Z"></path>
+<path class="hs-wire" d="M0 168 Q100 196 210 150 Q440 206 680 150 Q910 206 1140 150 Q1300 196 1440 160"></path>
+<path class="hs-wire" d="M0 182 Q100 210 210 164 Q440 220 680 164 Q910 220 1140 164 Q1300 210 1440 174"></path>
+<g class="hs-pole"><rect height="220" width="8" x="206" y="140"></rect><rect height="5" width="48" x="186" y="146"></rect></g>
+<g class="hs-pole"><rect height="220" width="8" x="676" y="140"></rect><rect height="5" width="48" x="656" y="146"></rect></g>
+<g class="hs-pole"><rect height="220" width="8" x="1136" y="140"></rect><rect height="5" width="48" x="1116" y="146"></rect></g>
+<polygon class="hs-roof" points="34,288 75.0,262 116,288"></polygon>
+<rect class="hs-body" height="64" width="70" x="40" y="288"></rect>
+<rect class="win off" height="16" rx="2" width="14" x="56" y="302"></rect>
+<rect class="win flick f0" height="16" rx="2" width="14" x="80" y="302"></rect>
+<polygon class="hs-roof" points="144,272 195.0,239 246,272"></polygon>
+<rect class="hs-body" height="80" width="90" x="150" y="272"></rect>
+<rect class="win" height="16" rx="2" width="14" x="165" y="286"></rect>
+<rect class="win flick f1" height="16" rx="2" width="14" x="188" y="286"></rect>
+<rect class="win" height="16" rx="2" width="14" x="211" y="286"></rect>
+<polygon class="hs-roof" points="284,294 320.0,270 356,294"></polygon>
+<rect class="hs-body" height="58" width="60" x="290" y="294"></rect>
+<rect class="win off" height="16" rx="2" width="14" x="303" y="308"></rect>
+<rect class="win flick f2" height="16" rx="2" width="14" x="323" y="308"></rect>
+<polygon class="hs-roof" points="384,260 445.0,222 506,260"></polygon>
+<rect class="hs-body" height="92" width="110" x="390" y="260"></rect>
+<rect class="win" height="16" rx="2" width="14" x="408" y="274"></rect>
+<rect class="win flick f3" height="16" rx="2" width="14" x="438" y="274"></rect>
+<rect class="win" height="16" rx="2" width="14" x="468" y="274"></rect>
+<polygon class="hs-roof" points="534,282 576.0,253 618,282"></polygon>
+<rect class="hs-body" height="70" width="72" x="540" y="282"></rect>
+<rect class="win flick f0" height="16" rx="2" width="14" x="556" y="296"></rect>
+<rect class="win flick f0" height="16" rx="2" width="14" x="582" y="296"></rect>
+<polygon class="hs-roof" points="654,268 708.0,233 762,268"></polygon>
+<rect class="hs-body" height="84" width="96" x="660" y="268"></rect>
+<rect class="win" height="16" rx="2" width="14" x="676" y="282"></rect>
+<rect class="win" height="16" rx="2" width="14" x="701" y="282"></rect>
+<rect class="win flick f1" height="16" rx="2" width="14" x="726" y="282"></rect>
+<polygon class="hs-roof" points="794,292 832.0,267 870,292"></polygon>
+<rect class="hs-body" height="60" width="64" x="800" y="292"></rect>
+<rect class="win flick f2" height="16" rx="2" width="14" x="814" y="306"></rect>
+<rect class="win" height="16" rx="2" width="14" x="836" y="306"></rect>
+<polygon class="hs-roof" points="894,256 960.0,216 1026,256"></polygon>
+<rect class="hs-body" height="96" width="120" x="900" y="256"></rect>
+<rect class="win" height="16" rx="2" width="14" x="920" y="270"></rect>
+<rect class="win" height="16" rx="2" width="14" x="953" y="270"></rect>
+<rect class="win" height="16" rx="2" width="14" x="986" y="270"></rect>
+<polygon class="hs-roof" points="1054,280 1100.0,250 1146,280"></polygon>
+<rect class="hs-body" height="72" width="80" x="1060" y="280"></rect>
+<rect class="win" height="16" rx="2" width="14" x="1073" y="294"></rect>
+<rect class="win flick f0" height="16" rx="2" width="14" x="1093" y="294"></rect>
+<rect class="win" height="16" rx="2" width="14" x="1113" y="294"></rect>
+<polygon class="hs-roof" points="1174,268 1230.0,233 1286,268"></polygon>
+<rect class="hs-body" height="84" width="100" x="1180" y="268"></rect>
+<rect class="win off" height="16" rx="2" width="14" x="1196" y="282"></rect>
+<rect class="win flick f1" height="16" rx="2" width="14" x="1223" y="282"></rect>
+<rect class="win flick f1" height="16" rx="2" width="14" x="1250" y="282"></rect>
+<polygon class="hs-roof" points="1304,286 1345.0,259 1386,286"></polygon>
+<rect class="hs-body" height="66" width="70" x="1310" y="286"></rect>
+<rect class="win off" height="16" rx="2" width="14" x="1326" y="300"></rect>
+<rect class="win" height="16" rx="2" width="14" x="1350" y="300"></rect>
+<rect class="hs-ground" height="10" width="1440" x="0" y="350"></rect>
+</svg>
+</header>
+<main data-own="">
+<section aria-labelledby="act-h" class="band act-now" id="act-now">
+<div class="wrap act-grid">
+<div class="act-intro">
+<p class="eyebrow">Take action now</p>
+<h2 id="act-h">Tell the people in charge what outages cost you</h2>
+<p class="lede">One email from one resident is easy to set aside. Dozens from the same ZIP code show a pattern. Pick who should hear from you, answer a few questions, and send.</p>
+<ol class="act-steps">
+<li><span><b>Pick who gets it.</b> The state regulator, the customer advocate, your county councilman or Ameren.</span></li>
+<li><span><b>Add your story.</b> Your street, your longest outage and anything it cost you.</span></li>
+<li><span><b>Send it from your own email.</b> The site fills in the address, subject and message.</span></li>
+</ol>
+<p class="src">This site never sends anything itself. Your email app sends the message from your address.</p>
+</div>
+<div class="composer" id="email">
+<div class="head" style="gap:6px">
+<p class="eyebrow">Email a decision-maker</p>
+<h3>Write your outage email in one minute</h3>
+<p class="src">Pick who it goes to and answer a few questions. The site writes the email, and your own email app sends it from your address.</p>
+</div>
+<form autocomplete="on" id="emailForm">
+<div class="stack" style="gap:18px">
+<fieldset>
+<legend>Who should get it?</legend>
+<div class="who">
+<label for="r-psc"><input checked="" id="r-psc" name="rcpt" type="radio" value="psc"/><b>Missouri PSC</b><span>Regulates Ameren and its rates</span></label>
+<label for="r-opc"><input id="r-opc" name="rcpt" type="radio" value="opc"/><b>Office of Public Counsel</b><span>Speaks for customers in utility cases</span></label>
+<label for="r-archer"><input id="r-archer" name="rcpt" type="radio" value="archer"/><b>Councilman Archer</b><span>County Council, District 6</span></label>
+<label for="r-ameren"><input id="r-ameren" name="rcpt" type="radio" value="ameren"/><b>Ameren Missouri</b><span>Owns and fixes the lines</span></label>
+</div>
+</fieldset>
+<div class="fields">
+<label for="e-name">Your name<input id="e-name" placeholder="First and last name" type="text"/></label>
+<label for="e-street">Street or nearest intersection<input id="e-street" placeholder="e.g. Your street, Oakville" type="text"/></label>
+<label for="e-long">Your longest outage
+                <select id="e-long">
+<option value="a few hours">A few hours</option>
+<option value="most of a day">Most of a day</option>
+<option selected="" value="one to two days">1 to 2 days</option>
+<option value="three days or more">3 days or more</option>
+</select>
+</label>
+<label class="check" for="e-med"><input id="e-med" type="checkbox"/>Someone in my home uses medical equipment that needs power</label>
+<label class="full" for="e-story">Anything else to add? (optional)<textarea id="e-story" placeholder="What happened, what it cost you, how often it happens"></textarea></label>
+</div>
+<div class="tobox">
+<label class="flab" for="e-to">Send to</label>
+<input id="e-to" placeholder="Paste the email address here" type="email"/>
+<p class="note" id="e-note"></p>
+</div>
+<div aria-live="polite" class="preview">
+<p class="subj" id="e-subject"></p>
+<pre id="e-body"></pre>
+</div>
+<div class="send-row">
+<a class="btn primary" href="mailto:" id="e-mailto">Open in my email app</a>
+<button class="btn" id="e-copy" type="button">Copy email</button>
+<span class="copied" id="e-msg"></span>
+</div>
+</div>
+</form>
+</div>
+</div>
+</section>
+<section aria-labelledby="ov-h" class="band" id="overview">
+<div class="wrap stack">
+<div class="facts">
+<div><b class="num">36,301</b><span>Oakville residents, with no city government (2020 Census)</span></div>
+<div><b class="num">5×</b><span>more outage time in 2023 when storms are counted</span></div>
+<div><b class="num">399</b><span>Medicare patients in ZIP 63129 who rely on powered medical devices</span></div>
+<div><b class="num">9 days</b><span>to fully restore the worst areas in May 2025</span></div>
+</div>
+<div class="ov-media">
+<div class="qr-card">
+<div aria-label="QR code that opens this website on a phone" class="qr-box" id="qr" role="img"><svg aria-hidden="true" shape-rendering="crispEdges" viewbox="-2 -2 37 37" xmlns="http://www.w3.org/2000/svg"><rect fill="#ffffff" height="37" width="37" x="-2" y="-2"></rect><path d="M0 0h7v1h-7zM12 0h4v1h-4zM17 0h3v1h-3zM21 0h3v1h-3zM26 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM11 1h2v1h-2zM14 1h6v1h-6zM21 1h1v1h-1zM23 1h2v1h-2zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM9 2h1v1h-1zM12 2h3v1h-3zM18 2h1v1h-1zM20 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h3v1h-3zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM10 3h2v1h-2zM13 3h4v1h-4zM18 3h2v1h-2zM22 3h1v1h-1zM26 3h1v1h-1zM28 3h3v1h-3zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM8 4h5v1h-5zM14 4h1v1h-1zM16 4h1v1h-1zM18 4h2v1h-2zM21 4h3v1h-3zM26 4h1v1h-1zM28 4h3v1h-3zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM10 5h3v1h-3zM15 5h6v1h-6zM22 5h3v1h-3zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h7v1h-7zM9 7h1v1h-1zM11 7h3v1h-3zM15 7h1v1h-1zM17 7h3v1h-3zM21 7h1v1h-1zM23 7h2v1h-2zM0 8h1v1h-1zM2 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM10 8h5v1h-5zM17 8h1v1h-1zM19 8h1v1h-1zM21 8h1v1h-1zM23 8h2v1h-2zM28 8h1v1h-1zM31 8h1v1h-1zM0 9h1v1h-1zM5 9h1v1h-1zM8 9h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM16 9h1v1h-1zM20 9h1v1h-1zM22 9h1v1h-1zM24 9h4v1h-4zM31 9h2v1h-2zM1 10h1v1h-1zM3 10h5v1h-5zM9 10h1v1h-1zM11 10h2v1h-2zM14 10h1v1h-1zM16 10h1v1h-1zM21 10h1v1h-1zM25 10h3v1h-3zM30 10h1v1h-1zM32 10h1v1h-1zM0 11h1v1h-1zM7 11h1v1h-1zM11 11h1v1h-1zM13 11h3v1h-3zM17 11h1v1h-1zM21 11h1v1h-1zM23 11h3v1h-3zM28 11h1v1h-1zM32 11h1v1h-1zM0 12h2v1h-2zM6 12h2v1h-2zM10 12h1v1h-1zM12 12h1v1h-1zM14 12h4v1h-4zM20 12h3v1h-3zM24 12h4v1h-4zM29 12h1v1h-1zM31 12h1v1h-1zM0 13h1v1h-1zM2 13h2v1h-2zM5 13h1v1h-1zM10 13h1v1h-1zM13 13h5v1h-5zM20 13h2v1h-2zM26 13h1v1h-1zM30 13h1v1h-1zM32 13h1v1h-1zM0 14h2v1h-2zM3 14h4v1h-4zM8 14h3v1h-3zM13 14h1v1h-1zM15 14h4v1h-4zM20 14h3v1h-3zM24 14h2v1h-2zM28 14h2v1h-2zM31 14h2v1h-2zM1 15h5v1h-5zM9 15h1v1h-1zM12 15h1v1h-1zM16 15h3v1h-3zM20 15h3v1h-3zM24 15h1v1h-1zM26 15h3v1h-3zM31 15h1v1h-1zM3 16h1v1h-1zM5 16h2v1h-2zM14 16h5v1h-5zM21 16h1v1h-1zM23 16h4v1h-4zM0 17h1v1h-1zM2 17h4v1h-4zM10 17h2v1h-2zM13 17h2v1h-2zM16 17h2v1h-2zM20 17h1v1h-1zM24 17h4v1h-4zM31 17h2v1h-2zM0 18h2v1h-2zM3 18h2v1h-2zM6 18h2v1h-2zM9 18h1v1h-1zM12 18h1v1h-1zM14 18h1v1h-1zM16 18h1v1h-1zM26 18h1v1h-1zM30 18h3v1h-3zM2 19h2v1h-2zM7 19h1v1h-1zM11 19h2v1h-2zM15 19h8v1h-8zM26 19h3v1h-3zM0 20h2v1h-2zM6 20h1v1h-1zM8 20h2v1h-2zM11 20h3v1h-3zM17 20h3v1h-3zM21 20h1v1h-1zM23 20h2v1h-2zM26 20h1v1h-1zM29 20h1v1h-1zM2 21h1v1h-1zM5 21h1v1h-1zM9 21h2v1h-2zM13 21h3v1h-3zM20 21h1v1h-1zM24 21h3v1h-3zM30 21h3v1h-3zM0 22h1v1h-1zM2 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM8 22h3v1h-3zM13 22h1v1h-1zM17 22h1v1h-1zM21 22h2v1h-2zM27 22h1v1h-1zM30 22h3v1h-3zM1 23h2v1h-2zM4 23h1v1h-1zM8 23h1v1h-1zM10 23h3v1h-3zM14 23h2v1h-2zM17 23h1v1h-1zM21 23h2v1h-2zM24 23h3v1h-3zM31 23h1v1h-1zM0 24h1v1h-1zM3 24h4v1h-4zM8 24h3v1h-3zM17 24h1v1h-1zM19 24h3v1h-3zM23 24h6v1h-6zM8 25h2v1h-2zM12 25h2v1h-2zM16 25h1v1h-1zM23 25h2v1h-2zM28 25h2v1h-2zM31 25h2v1h-2zM0 26h7v1h-7zM10 26h2v1h-2zM13 26h1v1h-1zM17 26h1v1h-1zM20 26h2v1h-2zM23 26h2v1h-2zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h3v1h-3zM0 27h1v1h-1zM6 27h1v1h-1zM9 27h1v1h-1zM12 27h1v1h-1zM15 27h1v1h-1zM17 27h3v1h-3zM21 27h2v1h-2zM24 27h1v1h-1zM28 27h1v1h-1zM31 27h2v1h-2zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM8 28h1v1h-1zM10 28h7v1h-7zM18 28h1v1h-1zM20 28h2v1h-2zM24 28h6v1h-6zM31 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM9 29h4v1h-4zM14 29h4v1h-4zM20 29h1v1h-1zM28 29h3v1h-3zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM8 30h2v1h-2zM14 30h4v1h-4zM22 30h1v1h-1zM24 30h1v1h-1zM28 30h3v1h-3zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM10 31h1v1h-1zM13 31h2v1h-2zM16 31h4v1h-4zM21 31h4v1h-4zM26 31h1v1h-1zM28 31h1v1h-1zM31 31h1v1h-1zM0 32h7v1h-7zM8 32h1v1h-1zM11 32h3v1h-3zM15 32h3v1h-3zM21 32h1v1h-1zM23 32h4v1h-4zM28 32h1v1h-1zM31 32h2v1h-2z" fill="#111114"></path></svg></div>
+<div class="qr-text">
+<p class="eyebrow">At HAMfest?</p>
+<h3>Scan to open this site on your phone</h3>
+<p>Point your phone’s camera at the code and tap the link.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="band" id="problem">
+<div class="wrap stack">
+<div class="head">
+<p class="eyebrow">The problem</p>
+<h2>Storm after storm, the same long waits</h2>
+<p class="lede">Most of St. Louis County gets power back in hours. Some Oakville streets wait days, and it happens again with every big storm.</p>
+</div>
+<div aria-labelledby="c1t" class="chart" role="figure">
+<h3 id="c1t">Ameren customers still without power after the May 16, 2025 tornado</h3>
+<div class="bars">
+<div class="bar"><div class="lab"><b>May 18, 10 a.m.</b>Day 2</div><div class="row"><div class="track"><div class="fill" style="width:100%"></div></div><span class="val num">47,000</span></div></div>
+<div class="bar"><div class="lab"><b>May 18, 7:30 p.m.</b>Day 2</div><div class="row"><div class="track"><div class="fill" style="width:74.5%"></div></div><span class="val num">35,000</span></div></div>
+<div class="bar"><div class="lab"><b>May 20, 8 p.m.</b>Day 4, after 2nd storm</div><div class="row"><div class="track"><div class="fill" style="width:35.3%"></div></div><span class="val num">16,600</span></div></div>
+<div class="bar"><div class="lab"><b>May 23, 11 a.m.</b>Day 7</div><div class="row"><div class="track"><div class="fill" style="width:9.4%"></div></div><span class="val num">4,400</span></div></div>
+</div>
+<p class="src">The last few thousand customers wait longest. Ameren restores the lines serving the most people first, so small pockets of homes on wooded lines are last. Source: Ameren Missouri restoration updates, May 18–23, 2025.</p>
+</div>
+<div class="livemap">
+<div class="livemap-text">
+<p class="eyebrow">Live data</p>
+<h3>See who’s without power right now</h3>
+<p>Ameren’s official outage map shows current outages, how many customers are affected, the cause when known, and estimated restoration times. Zoom in on Oakville (63129) to see your street.</p>
+<div class="send-row">
+<a class="btn primary" href="https://outagemap.ameren.com/" rel="noopener" target="_blank">Open Ameren’s outage map</a>
+<span class="src">Opens Ameren’s site in a new tab</span>
+</div>
+</div>
+<a aria-label="Open Ameren’s live outage map" class="livemap-visual" href="https://outagemap.ameren.com/" rel="noopener" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 320 200">
+<rect class="lm-bg" height="200" rx="10" width="320" x="0" y="0"></rect>
+<path class="lm-road" d="M0 140 C80 120 140 160 320 110"></path>
+<path class="lm-road" d="M120 0 C130 70 100 130 140 200"></path>
+<path class="lm-river" d="M0 185 C90 170 200 195 320 175"></path>
+<circle class="lm-out" cx="92" cy="72" r="14"></circle><circle class="lm-out" cx="210" cy="96" r="20"></circle><circle class="lm-out" cx="250" cy="52" r="10"></circle>
+<circle class="lm-dot" cx="92" cy="72" r="5"></circle><circle class="lm-dot" cx="210" cy="96" r="6"></circle><circle class="lm-dot" cx="250" cy="52" r="4"></circle>
+</svg>
+<span class="lm-tag">outagemap.ameren.com ↗</span>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="tree-h" class="band" id="tree">
+<div class="wrap stack">
+<div class="head">
+<p class="eyebrow">The problem tree</p>
+<h2 id="tree-h">The roots, trunk and branches of Oakville’s outages</h2>
+<p class="lede">The effects people notice grow from causes that are hard to see. Our solutions go after the roots.</p>
+</div>
+<div aria-label="Problem tree. Effects: health risks, spoiled food and costs, flooded basements, no heat or air conditioning, neighbors giving up. Problem: some Oakville streets lose power for days in major storms. Causes: trees between trims, old lines with no backup, small pockets restored last, storm outages left out of official numbers, no city government." class="ptree" role="figure">
+<div class="canopy">
+<p class="tl">Branches · The effects</p>
+<div class="leaves">
+<span>Health risks for 399 people on powered medical devices</span>
+<span>No heat or AC for older residents</span>
+<span>Spoiled food, hotel bills and lost pay</span>
+<span>Flooded basements when sump pumps stop</span>
+<span>Neighbors stop complaining because nothing changes</span>
+</div>
+</div>
+<div class="trunk">
+<p class="tl">Trunk · The problem</p>
+<p>Some Oakville streets lose power for days in nearly every major storm</p>
+</div>
+<div class="ground">
+<svg aria-hidden="true" preserveaspectratio="none" viewbox="0 0 100 40">
+<path d="M50 0 C50 18, 20 22, 6 40"></path>
+<path d="M50 0 C50 20, 34 26, 28 40"></path>
+<path d="M50 0 L50 40"></path>
+<path d="M50 0 C50 20, 66 26, 72 40"></path>
+<path d="M50 0 C50 18, 80 22, 94 40"></path>
+</svg>
+<p class="tl">Roots · The causes</p>
+<div class="roots">
+<span>Trees grow into lines between 4–6 year trims</span>
+<span>Old poles and backyard lines with no backup path</span>
+<span>Small pockets are restored last</span>
+<span>Storm outages left out of official numbers</span>
+<span>No city government to push for fixes</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="band" id="why">
+<div class="wrap stack">
+<div class="head">
+<p class="eyebrow">Why it happens</p>
+<h2>Living next to a power plant doesn’t protect you</h2>
+<p class="lede">I assumed being near Ameren’s old Meramec plant meant reliable power. It doesn’t, because the electricity takes four steps to reach your house, and the last one is the weak link.</p>
+</div>
+<div class="dgf p2p-wrap" data-noedit="">
+<div class="dg-head">
+<div aria-hidden="true" class="dg-legend">
+<span><svg height="8" width="26"><line class="lg-live" x1="0" x2="26" y1="4" y2="4"></line></svg>Energized</span>
+<span><svg height="8" width="26"><line class="lg-dead" x1="0" x2="26" y1="4" y2="4"></line></svg>No power</span>
+<span><svg height="14" width="14"><path class="lg-fault" d="M2 2 L12 12 M12 2 L2 12"></path></svg>Fault</span>
+</div>
+<div class="dg-btns">
+<button aria-pressed="false" class="dg-btn" id="p2pFault" type="button">Drop a tree on the street line</button>
+<button class="dg-btn ghost" id="p2pReset" type="button">Reset</button>
+</div>
+</div>
+<div class="dg-scroll">
+<svg aria-label="Schematic of how power reaches an Oakville home: a gas power plant feeds high-voltage transmission towers, which feed the Ringer Road substation, which feeds overhead neighborhood lines on wooden poles running through trees to homes. The neighborhood lines are the weak link." class="dg p2p" id="p2p" role="img" viewbox="0 0 1200 390">
+<line class="dg-ground" x1="0" x2="1200" y1="330" y2="330"></line>
+<g class="stage" data-stage="1">
+<rect class="dg-hl" height="290" rx="16" width="210" x="20" y="96"></rect>
+<rect class="dg-body" height="94" rx="3" width="118" x="40" y="236"></rect>
+<path class="dg-detail" d="M40 252 H158 M52 264 V318 M68 264 V318 M84 264 V318 M100 264 V318 M116 264 V318 M132 264 V318 M148 264 V318"></path>
+<rect class="dg-body" height="30" rx="2" width="36" x="122" y="206"></rect>
+<rect class="dg-body" height="86" width="15" x="62" y="150"></rect>
+<rect class="dg-body" height="68" width="15" x="88" y="168"></rect>
+<path class="dg-detail" d="M62 160 H77 M88 178 H103"></path>
+<path class="dg-pipe" d="M0 322 H40"></path>
+<g class="dg-xfmr"><rect height="44" rx="3" width="28" x="168" y="270"></rect><path d="M172 276 V308 M178 276 V308 M184 276 V308 M190 276 V308"></path></g>
+<path class="dg-steel" d="M200 330 V136 M214 330 V136 M196 140 H218"></path>
+<path class="dg-wire live" d="M182 270 C190 220 198 180 207 150"></path>
+<text class="dg-lbl" x="40" y="356">Generation</text>
+<text class="dg-sub" x="40" y="374">Castle Bluff gas plant</text>
+</g>
+<g class="stage" data-stage="2">
+<rect class="dg-hl" height="290" rx="16" width="300" x="236" y="96"></rect>
+<g class="dg-tower" transform="translate(300 0)"><path d="M-22 330 L-7 120 L7 120 L22 330 M-18 290 L18 250 M18 290 L-18 250 M-15 250 L15 210 M15 250 L-15 210 M-12 210 L12 170 M12 210 L-12 170 M-10 170 L10 132 M10 170 L-10 132 M-36 136 H36 M-28 152 H28 M-36 136 L-7 128 M36 136 L7 128"></path></g>
+<g class="dg-tower" transform="translate(460 0)"><path d="M-22 330 L-7 120 L7 120 L22 330 M-18 290 L18 250 M18 290 L-18 250 M-15 250 L15 210 M15 250 L-15 210 M-12 210 L12 170 M12 210 L-12 170 M-10 170 L10 132 M10 170 L-10 132 M-36 136 H36 M-28 152 H28 M-36 136 L-7 128 M36 136 L7 128"></path></g>
+<path class="dg-wire live" d="M207 140 Q236 158 264 136 Q344 160 424 136 Q496 160 567 140"></path>
+<path class="dg-wire live" d="M207 150 Q272 168 336 136 Q416 160 496 136 Q532 158 567 152"></path>
+<path class="dg-wire live" d="M207 160 Q240 176 272 152 Q352 176 432 152 Q500 176 567 164"></path>
+<text class="dg-lbl" x="250" y="356">Transmission</text>
+<text class="dg-sub" x="250" y="374">High-voltage regional grid</text>
+</g>
+<g class="stage" data-stage="3">
+<rect class="dg-hl" height="290" rx="16" width="222" x="542" y="96"></rect>
+<rect class="dg-fence" height="104" rx="2" width="204" x="552" y="226"></rect>
+<path class="dg-steel" d="M560 330 V136 M574 330 V136 M556 140 H578"></path>
+<path class="dg-wire live" d="M567 140 C590 160 600 210 610 246 M567 152 C596 170 612 210 626 246 M567 164 C604 180 626 214 642 246"></path>
+<g class="dg-xfmr"><rect height="62" rx="4" width="56" x="598" y="250"></rect><path d="M604 258 V304 M612 258 V304 M620 258 V304 M628 258 V304 M636 258 V304 M644 258 V304"></path><rect height="12" rx="2" width="8" x="606" y="240"></rect><rect height="12" rx="2" width="8" x="622" y="240"></rect><rect height="12" rx="2" width="8" x="638" y="240"></rect></g>
+<path class="dg-wire live" d="M654 272 H690"></path>
+<g class="dg-gear"><rect height="66" rx="4" width="56" x="690" y="254"></rect><path d="M700 266 H736 M700 278 H736"></path><circle cx="706" cy="300" r="5"></circle><circle cx="722" cy="300" r="5"></circle><circle cx="738" cy="300" r="4"></circle></g>
+<path class="dg-wire live" d="M746 262 H760 V214"></path>
+<g class="dg-badge" id="p2pNoPath"><rect height="26" rx="13" width="178" x="572" y="186"></rect><text text-anchor="middle" x="661" y="203">No backup path to reroute</text></g>
+<text class="dg-lbl" x="556" y="356">Substation</text>
+<text class="dg-sub" x="556" y="374">Ringer Road switchgear</text>
+</g>
+<g class="stage weak" data-stage="4">
+<rect class="dg-hl" height="290" rx="16" width="420" x="770" y="96"></rect>
+<g class="dg-pole"><path d="M820 330 V196 M800 202 H840"></path><circle cx="804" cy="198" r="3"></circle><circle cx="836" cy="198" r="3"></circle></g>
+<g class="dg-pole"><path d="M960 330 V196 M940 202 H980"></path><circle cx="944" cy="198" r="3"></circle><circle cx="976" cy="198" r="3"></circle><rect class="can" height="24" rx="4" width="16" x="964" y="214"></rect></g>
+<g class="dg-pole"><path d="M1090 330 V196 M1070 202 H1110"></path><circle cx="1074" cy="198" r="3"></circle><circle cx="1106" cy="198" r="3"></circle></g>
+<path class="dg-wire live" d="M760 214 Q790 224 820 202 Q850 214 878 218" id="p2pUp"></path>
+<g id="p2pDown">
+<path class="dg-wire live" d="M878 218 Q920 222 960 202 Q1025 226 1090 202 Q1140 220 1190 212"></path>
+<path class="dg-wire live thin" d="M972 238 Q992 262 1012 288 M1090 206 Q1106 246 1124 284"></path>
+</g>
+<path class="dg-neutral" d="M760 230 Q790 238 820 222 Q890 240 960 222 Q1025 240 1090 222 Q1140 236 1190 230"></path>
+<g class="dg-treeg"><path class="trk" d="M893 330 L899 330 L898 246 L894 246 Z"></path><circle cx="896" cy="222" r="34"></circle><circle cx="870" cy="240" r="22"></circle><circle cx="922" cy="238" r="24"></circle></g>
+<g class="dg-treeg"><path class="trk" d="M1037 330 L1043 330 L1042 252 L1038 252 Z"></path><circle cx="1040" cy="226" r="36"></circle><circle cx="1066" cy="244" r="22"></circle></g>
+<g class="dg-house" id="p2pH1"><path d="M992 300 L1014 282 L1036 300 Z"></path><rect height="30" width="36" x="996" y="300"></rect><rect class="w" height="9" width="9" x="1003" y="308"></rect><rect class="w" height="9" width="9" x="1017" y="308"></rect></g>
+<g class="dg-house" id="p2pH2"><path d="M1104 298 L1128 278 L1152 298 Z"></path><rect height="32" width="40" x="1108" y="298"></rect><rect class="w" height="10" width="10" x="1116" y="307"></rect><rect class="w" height="10" width="10" x="1131" y="307"></rect></g>
+<g class="dg-fault" id="p2pX"><circle cx="878" cy="218" r="13"></circle><path d="M871 211 L885 225 M885 211 L871 225"></path></g>
+<text class="dg-lbl" x="784" y="356">Your street <tspan class="dg-tag" dx="8">Weak link</tspan></text>
+<text class="dg-sub" x="784" y="374">Overhead lines on wood poles, through trees, to each home</text>
+</g>
+</svg>
+</div>
+<p aria-live="polite" class="dg-status" id="p2pStatus">Power flows from the plant to your porch. Tap a step below to see its part of the system.</p>
+</div>
+<div class="path">
+<div><p class="step">1 · Generation</p><h3>Power plant</h3><p>Meramec coal plant closed in 2022. The new ~$800M Castle Bluff gas plant on the same site runs only at peak demand.</p></div>
+<div><p class="step">2 · Transmission</p><h3>High-voltage grid</h3><p>Big power goes onto regional lines that serve the whole metro, not Oakville specifically.</p></div>
+<div><p class="step">3 · Substation</p><h3>Ringer Road</h3><p>Ameren’s $2M smart switchgear (2023) can reroute power for 10,000+ Oakville customers in seconds.</p></div>
+<div class="weak"><p class="step">4 · Weak link</p><h3>Your street’s lines</h3><p>When a tree takes down the backyard line, there’s nothing left for the substation to reroute through.</p></div>
+</div>
+<p class="src">Sources: St. Louis Post-Dispatch, Dec. 26, 2022; Missouri PSC File EA-2024-0237; PowerForward Missouri, Dec. 7, 2023.</p>
+</div>
+</section>
+<section aria-labelledby="hidden-h" class="band dark-band">
+<div class="wrap stack">
+<div class="head">
+<p class="eyebrow">The numbers that hide the problem</p>
+<h2 id="hidden-h">Official averages leave out the storms</h2>
+</div>
+<div class="versus">
+<div class="a"><p class="n num">93<small> MIN</small></p><p>Average outage time per Ameren customer in 2023, as reported, with major storms removed</p></div>
+<div class="b"><p class="n num">480<small> MIN</small></p><p>The same year with storms counted: about 8 hours, roughly five times higher</p></div>
+</div>
+<div aria-labelledby="waffle-cap" class="waffle-wrap" role="figure">
+<p class="lede" id="waffle-cap" style="color:var(--on-storm)">Each square is 10 minutes of the average customer’s 2023 outage time.</p>
+<div aria-hidden="true" class="waffle" id="waffle"></div>
+<div class="legend">
+<span><i></i>Counted in the headline number (93 min)</span>
+<span><i class="h"></i>Storm minutes left out (387 min)</span>
+</div>
+</div>
+<div aria-label="Outage minutes per customer without and with major storms" class="bars" role="figure">
+<p class="lede" style="color:var(--on-storm)">The same gap shows up in other years. Minutes without power per customer, with storms left out and with storms counted:</p>
+<div class="bar"><div class="lab"><b>Ameren MO 2024</b>storms left out</div><div class="row"><div class="track"><div class="fill dim" style="width:19.6%"></div></div><span class="val num">94</span></div></div>
+<div class="bar"><div class="lab"><b>Ameren MO 2024</b>storms counted</div><div class="row"><div class="track"><div class="fill" style="width:30.8%"></div></div><span class="val num">148</span></div></div>
+<div class="bar"><div class="lab"><b>All of Missouri 2025</b>storms left out</div><div class="row"><div class="track"><div class="fill dim" style="width:24.1%"></div></div><span class="val num">116</span></div></div>
+<div class="bar"><div class="lab"><b>All of Missouri 2025</b>storms counted</div><div class="row"><div class="track"><div class="fill" style="width:97.1%"></div></div><span class="val num">466</span></div></div>
+<p class="src">Bars use the same scale as 480 minutes. Sources: Ameren Missouri Annual Reliability Report for 2024 (<a href="https://www.efis.psc.mo.gov/Document/Display/828631" rel="noopener" style="color:var(--glow)" target="_blank">PSC EFIS Doc. 828631</a>); <a href="https://www.eia.gov/electricity/annual/html/epa_11_02.html" rel="noopener" style="color:var(--glow)" target="_blank">U.S. Energy Information Administration, Electric Power Annual, Table 11.2</a> (all Missouri utilities).</p>
+</div>
+<p class="src">Source: Ameren Missouri, Annual Reliability Report for 2023 (<a href="https://www.efis.psc.mo.gov/Document/Display/781519" rel="noopener" style="color:var(--glow)" target="_blank">PSC EFIS Doc. 781519</a>); Missouri rule 20 CSR 4240-23.010. SAIDI = total outage minutes per customer.</p>
+</div>
+</section>
+<section aria-labelledby="causes-h" class="band">
+<div class="wrap stack">
+<div class="head">
+<p class="eyebrow">Why it hasn’t been fixed</p>
+<h2 id="causes-h">Four reasons the problem keeps coming back</h2>
+</div>
+<div aria-labelledby="cycle-h" class="panel" role="figure">
+<div class="head" style="gap:6px">
+<h3 id="cycle-h">How storms fit between tree trims</h3>
+<p class="src">Example street trimmed in 2022. Ameren trims urban lines every 4 years and rural lines every 6.</p>
+</div>
+<div class="scroll-x">
+<div class="years">
+<div class="t"><b>2022</b><span class="chip trim">Trimmed</span></div>
+<div class="s"><b>2023</b><span class="chip hit">July storms</span></div>
+<div><b>2024</b><span class="chip grow">Trees grow</span></div>
+<div class="s"><b>2025</b><span class="chip hit">May tornado</span></div>
+<div class="t"><b>2026</b><span class="chip trim">Urban trim due</span></div>
+<div><b>2027</b><span class="chip grow">Trees grow</span></div>
+<div class="t"><b>2028</b><span class="chip trim">Rural trim due</span></div>
+</div>
+</div>
+<p class="src">Two major storm seasons can hit before the next trim. Hazard trees on private property aren’t trimmed by Ameren at all. Source: Ameren “Trimming for Reliability”; PSC EFIS Doc. 777970.</p>
+</div>
+<div aria-labelledby="order-h" class="panel" role="figure">
+<div class="head" style="gap:6px">
+<h3 id="order-h">Who gets power back first</h3>
+<p class="src">Ameren’s stated order after a storm. Bar length shows roughly how many customers each fix restores.</p>
+</div>
+<div class="restore-grid">
+<div class="dgf rs-wrap" data-noedit="">
+<svg aria-label="Restoration order on a branching distribution network: first the substation's main line and a critical facility such as a hospital, second the main line serving thousands, third a neighborhood lateral serving hundreds, and last a small wooded tap serving a few dozen homes." class="dg rs" id="rs" role="img" viewbox="0 0 520 440">
+<g data-n="1"><rect class="rs-sub" height="42" rx="10" width="128" x="196" y="12"></rect><text class="dg-lbl s" text-anchor="middle" x="260" y="38">Substation</text></g>
+<path class="rs-line" d="M260 54 V120 H100 V164" data-n="1"></path>
+<path class="rs-line thick" d="M260 120 V236" data-n="2"></path>
+<path class="rs-line" d="M260 172 H418 V232" data-n="3"></path>
+<path class="rs-line thin" d="M462 266 H480 V370" data-n="4"></path>
+<g class="rs-ico" data-n="1"><rect height="54" rx="4" width="64" x="68" y="168"></rect><path class="rs-cross" d="M100 178 V206 M86 192 H114"></path><text class="dg-sub" text-anchor="middle" x="100" y="242">Critical facility</text></g>
+<g class="rs-ico" data-n="2"><rect height="54" rx="2" width="26" x="214" y="248"></rect><rect height="66" rx="2" width="32" x="244" y="236"></rect><rect height="44" rx="2" width="24" x="280" y="258"></rect><path class="rs-win" d="M220 258 h14 M220 270 h14 M220 282 h14 M250 248 h20 M250 260 h20 M250 272 h20 M250 284 h20 M285 268 h14 M285 280 h14"></path><text class="dg-sub" text-anchor="middle" x="260" y="322">Thousands of customers</text></g>
+<g class="rs-ico" data-n="3"><path d="M386 248 l12 -10 l12 10 z M412 248 l12 -10 l12 10 z M438 248 l12 -10 l12 10 z M386 272 l12 -10 l12 10 z M412 272 l12 -10 l12 10 z M438 272 l12 -10 l12 10 z"></path><rect height="12" width="20" x="388" y="248"></rect><rect height="12" width="20" x="414" y="248"></rect><rect height="12" width="20" x="440" y="248"></rect><rect height="12" width="20" x="388" y="272"></rect><rect height="12" width="20" x="414" y="272"></rect><rect height="12" width="20" x="440" y="272"></rect><text class="dg-sub" text-anchor="middle" x="406" y="304">Hundreds</text></g>
+<g class="rs-trees"><circle cx="452" cy="354" r="15"></circle><circle cx="500" cy="356" r="13"></circle><circle cx="440" cy="374" r="9"></circle></g>
+<g class="rs-ico" data-n="4"><path d="M452 384 l14 -12 l14 12 z M480 384 l14 -12 l14 12 z"></path><rect height="16" width="24" x="454" y="384"></rect><rect height="16" width="22" x="482" y="384"></rect><text class="dg-sub" text-anchor="end" x="512" y="422">A few dozen homes</text></g>
+<g class="rs-badge" data-n="1"><circle cx="146" cy="120" r="13"></circle><text text-anchor="middle" x="146" y="125">1</text></g>
+<g class="rs-badge" data-n="2"><circle cx="282" cy="210" r="13"></circle><text text-anchor="middle" x="282" y="215">2</text></g>
+<g class="rs-badge" data-n="3"><circle cx="350" cy="172" r="13"></circle><text text-anchor="middle" x="350" y="177">3</text></g>
+<g class="rs-badge last" data-n="4"><circle cx="480" cy="306" r="13"></circle><text text-anchor="middle" x="480" y="311">4</text></g>
+</svg>
+</div>
+<div class="order">
+<div class="r"><span class="rank">1st</span><div><div class="bar2" style="width:100%"></div><p>Critical facilities like hospitals, and the main lines</p></div></div>
+<div class="r"><span class="rank">2nd</span><div><div class="bar2" style="width:72%"></div><p>Lines serving thousands of customers</p></div></div>
+<div class="r"><span class="rank">3rd</span><div><div class="bar2" style="width:44%"></div><p>Neighborhood lines serving hundreds</p></div></div>
+<div class="r last"><span class="rank">Last</span><div><div class="bar2" style="width:16%"></div><p>Small wooded lines serving a few dozen homes. Many Oakville pockets end up here.</p></div></div>
+</div>
+</div>
+<p class="src">Source: Ameren Missouri storm restoration updates, May 2025.</p>
+</div>
+</div>
+</section>
+<section class="band" id="hurt">
+<div class="wrap stack">
+<div class="head">
+<p class="eyebrow">Who gets hurt</p>
+<h2>After 24 hours, an outage becomes a health and money problem</h2>
+<p class="lede">Oakville has many older homeowners aging in place. Risks climb sharply once an outage passes a day.</p>
+</div>
+<div class="stat-row">
+<div><b class="num">399</b><p>Medicare patients in ZIP 63129 use electricity-powered medical equipment at home, such as oxygen machines, ventilators or power wheelchairs. That’s out of 13,932 Medicare patients in the ZIP code.</p><p class="src">Source: <a href="https://empowerprogram.hhs.gov/empowermap" rel="noopener" target="_blank">U.S. Dept. of Health and Human Services, emPOWER data, Nov. 2026</a></p></div>
+<div><b class="num">22.2%</b><p>of Oakville residents are 65 or older, the age group most at risk when heat, air conditioning or medical devices stop working. 86% of homes are owner-occupied.</p><p class="src">Source: <a href="https://www.census.gov/quickfacts/oakvillecdpmissouri" rel="noopener" target="_blank">U.S. Census Bureau QuickFacts, Oakville CDP</a></p></div>
+</div>
+<div class="stack" style="align-items:start">
+<div aria-labelledby="calc-h" class="calc">
+<div class="head" style="gap:6px">
+<h3 id="calc-h">What does one long outage cost a family?</h3>
+<p class="src">Example numbers based on national ranges. Change them to match your survey.</p>
+</div>
+<form autocomplete="off" id="calcForm">
+<label for="c-days">Days without power<input id="c-days" min="0" step="1" type="number" value="3"/></label>
+<label for="c-food">Food to restock ($)<input id="c-food" min="0" step="10" type="number" value="250"/></label>
+<label for="c-nights">Hotel nights<input id="c-nights" min="0" step="1" type="number" value="2"/></label>
+<label for="c-rate">Hotel per night ($)<input id="c-rate" min="0" step="10" type="number" value="130"/></label>
+<label for="c-meals">Meals out per day ($)<input id="c-meals" min="0" step="5" type="number" value="60"/></label>
+<label for="c-work">Lost pay ($)<input id="c-work" min="0" step="10" type="number" value="120"/></label>
+</form>
+<div class="out">
+<div class="total"><b class="num" id="c-total">$0</b><span>this family’s cost for one outage</span></div>
+<div><b class="num">$24–$60</b><span>per year for a $2–$5 monthly charge like Virginia’s burial program</span></div>
+</div>
+<p class="src">For comparison: a 2026 survey of 1,235 households by Lawrence Berkeley National Laboratory and partners found a 3-day outage cost families a median of $625 in lost income (mean $1,158). The survey covered rural co-op customers. <a href="https://eta-publications.lbl.gov/sites/default/files/2026-10/ice_2.0_nreca_final_report_28oct2026.pdf" rel="noopener" target="_blank">Source</a></p>
+</div>
+</div>
+</div>
+</section>
+<section class="band" id="solutions">
+<div class="wrap stack" style="gap:56px">
+<div class="head">
+<p class="eyebrow">Feasible solutions</p>
+<h2>Two fixes that are already working elsewhere</h2>
+<p class="lede">Ameren already uses the first one in other St. Louis neighborhoods, and Virginia has used the second since 2014.</p>
+</div>
+<div class="stack" style="gap:28px">
+<div class="sol-head">
+<span aria-hidden="true" class="no">1</span>
+<div>
+<h2 style="font-size:clamp(28px,4vw,40px)">Storm-harden the lines with stronger poles and smart switches</h2>
+<div class="prose">
+</div>
+</div>
+</div>
+<div aria-labelledby="ss-h" class="panel" id="smart-switches">
+<div class="intro-grid">
+<figure class="anatomy" style="margin:0">
+<svg aria-label="A utility pole with a three-phase smart switch: three vacuum interrupters with insulating bushings (1) hang from a mounting frame (2); a control cable runs down the pole to a control cabinet (3), which has a radio antenna (4)." class="dg anat" id="anat" role="img" viewbox="0 0 420 430">
+<rect class="sky2" height="430" rx="14" width="420" x="0" y="0"></rect>
+<path class="an-cond" d="M0 52 H420 M0 68 H420 M0 84 H420"></path>
+<path class="an-pole" d="M203 30 L221 30 L225 414 L199 414 Z"></path>
+<path class="an-grain" d="M207 60 V400 M213 50 V404 M218 70 V398"></path>
+<rect class="an-arm" height="9" rx="2" width="184" x="120" y="92"></rect>
+<g class="an-ins"><path d="M146 92 V84 M206 92 V68 M266 92 V52"></path><ellipse cx="146" cy="86" rx="7" ry="3"></ellipse><ellipse cx="206" cy="72" rx="7" ry="3"></ellipse><ellipse cx="266" cy="56" rx="7" ry="3"></ellipse></g>
+<path class="an-jump" d="M150 84 C150 104 152 118 152 132 M210 68 C214 100 212 118 212 132 M270 52 C276 96 272 118 272 132"></path>
+<g class="part" data-part="1">
+<rect class="an-hl" height="112" rx="12" width="168" x="128" y="112"></rect>
+<g class="an-vi" transform="translate(152 0)"><ellipse cx="0" cy="134" rx="10" ry="3.5"></ellipse><ellipse cx="0" cy="142" rx="12" ry="4"></ellipse><ellipse cx="0" cy="150" rx="12" ry="4"></ellipse><ellipse cx="0" cy="158" rx="12" ry="4"></ellipse><rect height="54" rx="10" width="28" x="-14" y="160"></rect><rect class="band" height="5" width="28" x="-14" y="182"></rect></g>
+<g class="an-vi" transform="translate(212 0)"><ellipse cx="0" cy="134" rx="10" ry="3.5"></ellipse><ellipse cx="0" cy="142" rx="12" ry="4"></ellipse><ellipse cx="0" cy="150" rx="12" ry="4"></ellipse><ellipse cx="0" cy="158" rx="12" ry="4"></ellipse><rect height="54" rx="10" width="28" x="-14" y="160"></rect><rect class="band" height="5" width="28" x="-14" y="182"></rect></g>
+<g class="an-vi" transform="translate(272 0)"><ellipse cx="0" cy="134" rx="10" ry="3.5"></ellipse><ellipse cx="0" cy="142" rx="12" ry="4"></ellipse><ellipse cx="0" cy="150" rx="12" ry="4"></ellipse><ellipse cx="0" cy="158" rx="12" ry="4"></ellipse><rect height="54" rx="10" width="28" x="-14" y="160"></rect><rect class="band" height="5" width="28" x="-14" y="182"></rect></g>
+</g>
+<g class="part" data-part="2">
+<rect class="an-hl" height="40" rx="10" width="190" x="118" y="208"></rect>
+<rect class="an-frame" height="10" rx="2" width="168" x="128" y="214"></rect>
+<path class="an-brace" d="M138 224 L203 242 M286 224 L221 242"></path>
+<rect class="an-frame" height="10" rx="2" width="28" x="198" y="236"></rect>
+</g>
+<g class="part" data-part="3">
+<rect class="an-hl" height="106" rx="10" width="92" x="226" y="292"></rect>
+<path class="an-cable" d="M224 246 C232 262 236 280 248 300"></path>
+<rect class="an-cab" height="90" rx="5" width="74" x="234" y="300"></rect>
+<path class="an-seam" d="M271 306 V384"></path>
+<rect class="an-disp" height="14" rx="2" width="22" x="242" y="312"></rect>
+<circle class="an-led" cx="250" cy="340" r="3"></circle>
+<rect class="an-handle" height="18" rx="2" width="4" x="276" y="336"></rect>
+<path class="an-strap" d="M225 318 H234 M225 372 H234"></path>
+</g>
+<g class="part" data-part="4">
+<rect class="an-hl" height="70" rx="10" width="56" x="282" y="236"></rect>
+<path class="an-mast" d="M300 300 V256"></path>
+<circle class="an-tip" cx="300" cy="253" r="4"></circle>
+<path class="an-wave" d="M310 246 Q318 253 310 260 M316 240 Q328 253 316 266 M322 234 Q338 253 322 272"></path>
+</g>
+<line class="an-gnd" x1="0" x2="420" y1="414" y2="414"></line>
+<g class="mk" data-part="1"><path class="lead" d="M72 168 H136"></path><circle cx="58" cy="168" r="14"></circle><text text-anchor="middle" x="58" y="173">1</text></g>
+<g class="mk" data-part="2"><path class="lead" d="M72 230 H128"></path><circle cx="58" cy="230" r="14"></circle><text text-anchor="middle" x="58" y="235">2</text></g>
+<g class="mk" data-part="4"><path class="lead" d="M364 270 H332"></path><circle cx="378" cy="270" r="14"></circle><text text-anchor="middle" x="378" y="275">4</text></g>
+<g class="mk" data-part="3"><path class="lead" d="M364 344 H308"></path><circle cx="378" cy="344" r="14"></circle><text text-anchor="middle" x="378" y="349">3</text></g>
+</svg>
+<ol class="parts">
+<li><span class="pn">1</span><span><b>Vacuum interrupters.</b> Three of them, one for each electrical phase. They open and close the circuit to stop fault current.</span></li>
+<li><span class="pn">2</span><span><b>Mounting assembly.</b> A crossarm or pole bracket that holds the equipment on the pole.</span></li>
+<li><span class="pn">3</span><span><b>Control cabinet.</b> A weatherproof stainless-steel box near the bottom of the pole. Its electronics watch the line and decide when to switch.</span></li>
+<li><span class="pn">4</span><span><b>Communications.</b> A radio or cellular link to other switches and to the utility’s control systems.</span></li>
+</ol>
+<p class="src">A typical overhead three-phase smart switch, simplified.</p>
+</figure>
+</div>
+</div>
+<div aria-labelledby="demo-h" class="demo fl-demo">
+<div class="head" style="gap:6px">
+<h3 id="demo-h">Try it: a self-healing line when a tree falls</h3>
+<p class="src">A simplified neighborhood line with six homes and a backup connection on the far end.</p>
+</div>
+<div class="dgf" data-noedit="">
+<div class="dg-head">
+<div aria-label="Choose a scenario" class="dg-seg" role="tablist">
+<button aria-selected="true" class="on" data-sc="perm" role="tab" type="button">Tree on the line</button>
+<button aria-selected="false" data-sc="temp" role="tab" type="button">Branch brushes the line</button>
+<button aria-selected="false" data-sc="none" role="tab" type="button">No smart switches</button>
+</div>
+<div aria-hidden="true" class="dg-legend">
+<span><svg height="8" width="26"><line class="lg-live" x1="0" x2="26" y1="4" y2="4"></line></svg>Energized</span>
+<span><svg height="8" width="26"><line class="lg-dead" x1="0" x2="26" y1="4" y2="4"></line></svg>No power</span>
+<span><svg height="8" width="26"><line class="lg-comm" x1="0" x2="26" y1="4" y2="4"></line></svg>Radio link</span>
+<span><svg height="14" width="14"><rect class="lg-closed" height="10" rx="2" width="10" x="2" y="2"></rect></svg>Closed</span>
+<span><svg height="14" width="14"><rect class="lg-open" height="10" rx="2" width="10" x="2" y="2"></rect></svg>Open</span>
+</div>
+</div>
+<div class="dg-scroll">
+<svg aria-label="One-line diagram: a substation breaker feeds sections A, B and C of a neighborhood line through smart switches R1 and R2. A normally open tie switch at the far end connects to a neighboring feeder. Two homes hang off each section." class="dg fl" id="fl" role="img" viewbox="0 0 1000 340">
+<path class="fl-comm" d="M320 136 Q445 62 570 136 M570 136 Q692 62 815 136" id="flComm"></path>
+<g class="fl-src"><rect height="108" rx="12" width="96" x="16" y="96"></rect><path class="fl-src-x" d="M38 120 h20 v24 h-20 z M44 128 h8 M44 136 h8"></path><text class="dg-lbl s" text-anchor="middle" x="64" y="174">Substation</text><text class="dg-sub" text-anchor="middle" x="64" y="192">Ringer Rd</text></g>
+<g class="fl-src"><rect height="108" rx="12" width="104" x="876" y="96"></rect><path class="fl-src-x" d="M900 120 h20 v24 h-20 z M906 128 h8 M906 136 h8"></path><text class="dg-lbl s" text-anchor="middle" x="928" y="174">Neighboring</text><text class="dg-sub" text-anchor="middle" x="928" y="192">feeder</text></g>
+<path class="fl-wire" d="M112 150 H311" id="flWA"></path>
+<path class="fl-wire" d="M329 150 H561" id="flWB"></path>
+<path class="fl-wire" d="M579 150 H806" id="flWC"></path>
+<path class="fl-wire" d="M824 150 H876" id="flWT"></path>
+<path class="fl-flow" d="M112 150 H311" id="flFA"></path>
+<path class="fl-flow" d="M329 150 H561" id="flFB"></path>
+<path class="fl-flow" d="M579 150 H806" id="flFC"></path>
+<path class="fl-flow rev" d="M824 150 H876" id="flFT"></path>
+<text class="fl-sec" text-anchor="middle" x="236" y="138">Section A</text>
+<text class="fl-sec" text-anchor="middle" x="445" y="138">Section B</text>
+<text class="fl-sec" text-anchor="middle" x="692" y="138">Section C</text>
+<g class="fl-taps"></g>
+<g class="fl-tree" id="flTree"><g class="fall"><path class="trk" d="M497 300 L505 300 L503 152 L499 152 Z"></path><path class="trk" d="M501 214 L520 196 L523 200 L504 218 Z"></path><circle cx="501" cy="140" r="24"></circle><circle cx="484" cy="154" r="15"></circle><circle cx="518" cy="154" r="15"></circle></g></g>
+<g class="fl-branch" id="flBranch"><path class="trk" d="M412 112 L452 146 L449 150 L409 116 Z"></path><circle cx="410" cy="110" r="11"></circle><circle cx="424" cy="118" r="8"></circle></g>
+<g class="fl-arc" id="flArc"><circle cx="445" cy="150" r="16"></circle><path d="M445 128 L449 142 L462 140 L452 150 L460 162 L447 157 L441 170 L438 156 L426 158 L435 148 L428 136 L441 141 Z"></path></g>
+<g class="fl-x" id="flX"><circle cx="445" cy="150" r="12"></circle><path d="M439 144 L451 156 M451 144 L439 156"></path></g>
+<circle class="fl-sense" cx="320" cy="150" id="flSense" r="22"></circle>
+<g class="fl-sw" id="flCB"><rect height="18" rx="4" width="18" x="145" y="141"></rect><text class="fl-swl" text-anchor="middle" x="154" y="122">Breaker</text><text class="fl-sws" text-anchor="middle" x="154" y="182">CLOSED</text></g>
+<g class="fl-sw" id="flR1"><rect height="18" rx="4" width="18" x="311" y="141"></rect><text class="fl-swl" text-anchor="middle" x="320" y="122">R1</text><text class="fl-sws" text-anchor="middle" x="320" y="182">CLOSED</text></g>
+<g class="fl-sw" id="flR2"><rect height="18" rx="4" width="18" x="561" y="141"></rect><text class="fl-swl" text-anchor="middle" x="570" y="122">R2</text><text class="fl-sws" text-anchor="middle" x="570" y="182">CLOSED</text></g>
+<g class="fl-sw" id="flT"><rect height="18" rx="4" width="18" x="806" y="141"></rect><text class="fl-swl" text-anchor="middle" x="815" y="122">Tie switch</text><text class="fl-sws" text-anchor="middle" x="815" y="182">OPEN</text></g>
+<line class="fl-ground" x1="150" x2="850" y1="300" y2="300"></line>
+</svg>
+</div>
+<ol class="dg-steps" id="flSteps"></ol>
+<div class="dg-ctrl">
+<button class="dg-btn" id="flPlay" type="button">Play</button>
+<button aria-label="Previous step" class="dg-btn ghost" id="flBack" type="button">Back</button>
+<button aria-label="Next step" class="dg-btn ghost" id="flNext" type="button">Next</button>
+<button class="dg-btn ghost" id="flReset" type="button">Reset</button>
+<span aria-live="polite" class="dg-count" id="flCount">6 of 6 homes have power</span>
+</div>
+<p aria-live="polite" class="dg-status" id="flCap"></p>
+</div>
+<div class="flisr-wrap">
+<p class="tl">What a self-healing grid (FLISR) does in the seconds after a fault</p>
+<ol class="flisr">
+<li>A fault hits one part of a feeder, the line that runs out from the substation.</li>
+<li>Smart switches along the line sense the disturbance.</li>
+<li>The system finds the damaged section and opens the switches on both sides of it.</li>
+<li>The switches coordinate with each other over cellular, private radio or mesh networks.</li>
+<li>A tie switch closes so a neighboring feeder can power the far end of the line.</li>
+<li>Homes and businesses outside the damaged section can have power back within seconds.</li>
+</ol>
+<p class="src">The damaged section stays isolated until crews finish their repairs.</p>
+</div>
+</div>
+<div class="stack" style="gap:20px">
+<div aria-labelledby="cost1-h" class="chart" role="figure">
+<h3 id="cost1-h">Estimated cost of one installed smart switch</h3>
+<div class="ranges">
+<div class="rg"><div class="lab"><b>Hardware only (3-phase unit)</b><span class="rv">$15,000–$30,000</span><span>Vacuum interrupter assembly, mounting frame and smart SCADA controller</span></div><div class="track2"><div class="span2" style="left:18.75%;width:18.75%"></div></div></div>
+<div class="rg"><div class="lab"><b>Pole and make-ready work</b><span class="rv">$5,000–$15,000</span><span>May include reinforcing or replacing an older wood pole</span></div><div class="track2"><div class="span2" style="left:6.25%;width:12.50%"></div></div></div>
+<div class="rg"><div class="lab"><b>Installation and engineering</b><span class="rv">$10,000–$20,000</span><span>Utility crews, equipment, engineering, SCADA programming and communications setup</span></div><div class="track2"><div class="span2" style="left:12.50%;width:12.50%"></div></div></div>
+<div class="rg hl"><div class="lab"><b>Total installed cost</b><span class="rv">$35,000–$65,000</span><span>One unit, fully installed and commissioned</span></div><div class="track2"><div class="span2" style="left:43.75%;width:37.50%"></div></div></div>
+<div aria-hidden="true" class="rg axisrow"><div></div><div class="axis2"><span>$0</span><span>$20K</span><span>$40K</span><span>$60K</span><span>$80K</span></div></div>
+</div>
+<p class="src">Each bar runs from the low estimate to the high one. Utility industry estimates and filings often put one installed unit around <b style="color:var(--ink)">$45,000–$55,000</b>. These are estimates, not quotes; real prices depend on the equipment, the pole and the site.</p>
+</div>
+</div>
+</div>
+<div class="stack" style="gap:28px">
+<div class="sol-head">
+<span aria-hidden="true" class="no">2</span>
+<div>
+<h2 style="font-size:clamp(28px,4vw,40px)">Bury only the worst lines underground</h2>
+<div class="prose">
+</div>
+</div>
+</div>
+<div aria-labelledby="dive-h" class="dive" id="dive" role="figure">
+<div class="dive-stage">
+<svg aria-label="A street with overhead power lines. A storm knocks a tree onto the line and the homes go dark. The overhead line is removed, the view moves underground, and a buried line lights up and powers the homes again." class="dive-svg" id="diveSvg" preserveaspectratio="xMidYMin slice" role="img" viewbox="0 0 1200 750">
+<defs>
+<lineargradient id="dvSky" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0D1116"></stop><stop offset="1" stop-color="#1E2833"></stop></lineargradient>
+<lineargradient id="dvSoil" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#4B3626"></stop><stop offset="0.35" stop-color="#5E4330"></stop><stop offset="1" stop-color="#2E2620"></stop></lineargradient>
+<clippath id="dvCableClip"><rect height="120" id="dvCableReveal" width="0" x="0" y="760"></rect></clippath>
+<filter height="500%" id="dvGlow" width="140%" x="-20%" y="-200%"><fegaussianblur stddeviation="6"></fegaussianblur></filter>
+</defs>
+<rect fill="url(#dvSky)" height="500" width="1200" x="0" y="0"></rect>
+<rect fill="url(#dvSoil)" height="900" width="1200" x="0" y="500"></rect>
+<g class="dv-pebbles" id="dvPebbles"></g>
+<rect fill="#2F5D3A" height="10" width="1200" x="0" y="494"></rect>
+<g class="dv-overhead" id="dvOverhead">
+<path class="dv-wire" d="M0 250 Q135 288 270 240 Q455 304 640 240 Q800 300 960 240 Q1080 286 1200 250"></path>
+<path class="dv-drop" d="M190 262 L190 400 M450 294 L450 400 M830 266 L830 400 M1070 266 L1070 400"></path>
+<g class="dv-pole"><rect height="270" width="10" x="265" y="230"></rect><rect height="6" width="54" x="243" y="236"></rect></g>
+<g class="dv-pole"><rect height="270" width="10" x="635" y="230"></rect><rect height="6" width="54" x="613" y="236"></rect></g>
+<g class="dv-pole"><rect height="270" width="10" x="955" y="230"></rect><rect height="6" width="54" x="933" y="236"></rect></g>
+</g>
+<g class="dv-houses">
+<polygon points="110,400 190,345 270,400"></polygon><rect height="100" width="140" x="120" y="400"></rect>
+<polygon points="370,400 450,345 530,400"></polygon><rect height="100" width="140" x="380" y="400"></rect>
+<polygon points="750,400 830,345 910,400"></polygon><rect height="100" width="140" x="760" y="400"></rect>
+<polygon points="990,400 1070,345 1150,400"></polygon><rect height="100" width="140" x="1000" y="400"></rect>
+</g>
+<g class="dv-windows">
+<rect height="28" rx="3" width="30" x="145" y="420"></rect><rect height="28" rx="3" width="30" x="205" y="420"></rect>
+<rect height="28" rx="3" width="30" x="405" y="420"></rect><rect height="28" rx="3" width="30" x="465" y="420"></rect>
+<rect height="28" rx="3" width="30" x="785" y="420"></rect><rect height="28" rx="3" width="30" x="845" y="420"></rect>
+<rect height="28" rx="3" width="30" x="1025" y="420"></rect><rect height="28" rx="3" width="30" x="1085" y="420"></rect>
+</g>
+<g class="dv-tree" id="dvTree">
+<rect fill="#6B4A2E" height="130" width="18" x="551" y="370"></rect>
+<circle cx="560" cy="330" fill="#2F6B3F" r="62"></circle>
+<circle cx="514" cy="364" fill="#357A47" r="40"></circle>
+<circle cx="604" cy="362" fill="#2A603A" r="42"></circle>
+</g>
+<g class="dv-spark" id="dvSpark">
+<polygon fill="#FFD27A" points="470,282 482,302 504,298 488,314 498,336 476,322 458,338 462,316 444,304 466,300"></polygon>
+</g>
+<g class="dv-under" id="dvUnder">
+<path class="dv-trench" d="M0 820 L1200 820"></path>
+<path class="dv-risers" d="M190 820 L190 500 M450 820 L450 500 M830 820 L830 500 M1070 820 L1070 500"></path>
+<g clip-path="url(#dvCableClip)">
+<path class="dv-cable-glow" d="M0 820 L1200 820" filter="url(#dvGlow)"></path>
+<path class="dv-cable" d="M0 820 L1200 820"></path>
+</g>
+<g class="dv-ruler">
+<line x1="1120" x2="1120" y1="500" y2="820"></line>
+<line x1="1110" x2="1130" y1="500" y2="500"></line>
+<line x1="1110" x2="1130" y1="820" y2="820"></line>
+<text text-anchor="end" x="1100" y="530">Ground level</text>
+<text text-anchor="end" x="1100" y="806">Buried line, a few feet down</text>
+</g>
+</g>
+</svg>
+<div class="dive-top">
+<p class="eyebrow">Scroll to see it</p>
+<h3 id="dive-h">Take the worst lines underground</h3>
+</div>
+<div aria-live="polite" class="dive-caps">
+<p class="dc on" data-i="0">Today, many Oakville lines hang overhead, running through backyards and mature trees.</p>
+<p class="dc" data-i="1">One storm brings down one tree, and the whole line goes dark.</p>
+<p class="dc" data-i="2">Strategic undergrounding takes only the worst lines down off the poles…</p>
+<p class="dc" data-i="3">…and buries them where falling limbs can’t reach. On Dominion’s buried lines, outages dropped from about 700 minutes a year to about 2–3.</p>
+</div>
+<div aria-hidden="true" class="dive-meter"><i id="diveMeter"></i></div>
+</div>
+</div>
+<div aria-labelledby="xsec-h" class="panel xsec" role="figure">
+<div class="head" style="gap:6px">
+<h3 id="xsec-h">Bury where trees are the problem, harden where water is</h3>
+<p class="src">A side view of the plan for Oakville.</p>
+</div>
+<div class="scroll-x">
+<svg aria-label="Left: on wooded higher ground, the power line is buried under the soil where falling limbs cannot reach it. Right: near the Meramec River, the line stays overhead on a composite pole with a smart switch, above flood water." role="img" viewbox="0 0 840 320">
+<rect class="sky" height="200" width="840" x="0" y="0"></rect>
+<rect class="soil" height="120" width="840" x="0" y="200"></rect>
+<polygon class="water" points="660,200 840,200 840,320 630,320"></polygon>
+<line class="grass" x1="0" x2="660" y1="200" y2="200"></line>
+<line class="div" x1="420" x2="420" y1="10" y2="320"></line>
+<text class="t" x="20" y="34">Wooded higher ground: bury it</text>
+<rect class="trunk2" height="82" width="14" x="110" y="118"></rect>
+<circle class="crown2" cx="117" cy="98" r="46"></circle>
+<circle class="crown2" cx="160" cy="118" r="30"></circle>
+<polygon class="hroof" points="232,150 270,116 308,150"></polygon>
+<rect class="hbody" height="50" width="60" x="240" y="150"></rect>
+<rect class="conduit" height="16" rx="8" width="380" x="20" y="252"></rect>
+<line class="cable" x1="28" x2="392" y1="260" y2="260"></line>
+<line class="cable" x1="270" x2="270" y1="260" y2="202"></line>
+<text class="ts" x="20" y="300">Buried line: falling limbs can’t reach it</text>
+<text class="t" x="440" y="34">Near the Meramec River: harden it</text>
+<rect class="pole" height="130" width="10" x="466" y="70"></rect>
+<rect class="pole" height="6" width="50" x="446" y="78"></rect>
+<line class="wire2" x1="471" x2="830" y1="82" y2="82"></line>
+<rect class="switch" height="20" rx="3" width="28" x="612" y="72"></rect>
+<text class="ts" x="592" y="62">Smart switch</text>
+<text class="ts" x="486" y="140">Composite pole</text>
+<polygon class="hroof" points="532,170 562,146 592,170"></polygon>
+<rect class="hbody" height="30" width="48" x="538" y="170"></rect>
+<line class="wire2" x1="562" x2="562" y1="82" y2="146"></line>
+<line class="flood" x1="630" x2="840" y1="178" y2="178"></line>
+<text class="ts" x="686" y="168">Flood water level</text>
+<text class="ts" x="440" y="300">Kept overhead: no buried cable to flood</text>
+</svg>
+</div>
+</div>
+<div aria-labelledby="c3t" class="chart" role="figure">
+<h3 id="c3t">Yearly outage minutes on Dominion’s converted lines</h3>
+<div class="bars">
+<div class="bar"><div class="lab"><b>Before burial</b>Overhead</div><div class="row"><div class="track"><div class="fill dim" style="width:100%"></div></div><span class="val num">~700 min</span></div></div>
+<div class="bar"><div class="lab"><b>After burial</b>Underground</div><div class="row"><div class="track"><div class="fill good" style="width:0.4%"></div></div><span class="val num">~2–3 min</span></div></div>
+</div>
+<p class="src">Sources: <a href="https://www.baconsrebellion.com/dominion-program-to-bury-lines-halfway-to-goal/" rel="noopener" target="_blank">Bacon’s Rebellion, Apr. 2024</a>; <a href="https://www.tdworld.com/intelligent-undergrounding/article/21146693/strategic-undergrounding" rel="noopener" target="_blank">T&amp;D World, Nov. 2020</a>; <a href="https://insideclimatenews.org/news/15052026/virginia-governor-signs-dominion-bills/" rel="noopener" target="_blank">Inside Climate News, May 2026</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="ladder-h" class="band">
+<div class="wrap stack">
+<div class="head">
+<p class="eyebrow">Civic action plan</p>
+<h2 id="ladder-h">Who I’m persuading, from my street up</h2>
+<p class="lede">Ameren’s engineers act on documented patterns, and the state approves the money. So the plan starts by collecting evidence on my street, then takes it to the county, the state and Ameren.</p>
+</div>
+<div class="ladder">
+<div><p class="eyebrow">Neighbors</p><h3>Build the evidence</h3><p>Outage logs, photos of backyard lines and a 10-household cost survey.</p></div>
+<div><p class="eyebrow">County</p><h3>Councilman Mike Archer</h3><p>District 6: host a town hall with Ameren in Oakville and sign a support letter.</p></div>
+<div><p class="eyebrow">State</p><h3>Missouri PSC</h3><p>A public comment asking that storm-included numbers count in worst-circuit reviews.</p></div>
+<div class="primary"><p class="eyebrow">Utility · Primary audience</p><h3>Ameren Archview</h3><p>Put Oakville’s worst lines in the next round of the Smart Energy Plan.</p></div>
+</div>
+</div>
+</section>
+</main>
+<footer data-own="">
+<div class="wrap fgrid">
+<div>
+<p class="fbrand">Lights <span>On</span></p>
+<p>A civic action project on repeated, multi-day power outages in Oakville, Missouri, and how to fix them.</p>
+</div>
+<div>
+<h4>On this site</h4>
+<ul>
+<li><a href="#problem">The problem</a></li>
+<li><a href="#tree">Problem tree</a></li>
+<li><a href="#why">Why it happens</a></li>
+<li><a href="#solutions">Solutions</a></li>
+<li><a href="#smart-switches">How smart switches work</a></li>
+<li><a href="#email">Email a decision-maker</a></li>
+</ul>
+</div>
+<div>
+<h4>Who to contact</h4>
+<ul>
+<li>Ameren Missouri outages: <span class="sel">800-552-7583</span> · <a href="https://outagemap.ameren.com/" rel="noopener" target="_blank">live outage map</a></li>
+<li>Missouri PSC: <span class="sel">1-800-392-4211</span> · <span class="sel">pscinfo@psc.mo.gov</span></li>
+<li>Office of Public Counsel: <span class="sel">573-751-4857</span> · <span class="sel">mopco@opc.mo.gov</span></li>
+<li>Councilman Mike Archer: <span class="sel">(314) 615-5442</span></li>
+</ul>
+</div>
+<div>
+<h4>About</h4>
+<p>Humanities Civic Action Plan by Jake Inskip · [Group members]</p>
+<p>HAMfest Expo · December 15, 2026</p>
+</div>
+<p class="fine">Data from Ameren Missouri filings with the Missouri PSC, the U.S. Energy Information Administration, the U.S. Census Bureau and HHS. Full list in Research and sources.</p>
+</div>
+</footer>
+<script data-own="" id="text-edits" type="application/json">{"p-1le5bp2-1":"<br>","p-1v9i955-1":"<b>The solution:</b> Storm-harden Oakville’s weakest lines with stronger poles and smart switches, bury only the worst wooded backyard lines, and require storm-included outage numbers so these streets can’t be overlooked.&nbsp;"}</script>
+<script data-own="" id="media-data" type="application/json">{}</script>
+<div class="editbar" data-own="" hidden="" id="editbar">
+<span id="edit-status">Want to change the wording?</span>
+<button class="eb-btn" id="edit-start" type="button">Edit text</button>
+<button class="eb-btn primary" hidden="" id="edit-save" type="button">Save changes</button>
+<button class="eb-btn" hidden="" id="edit-cancel" type="button">Cancel</button>
+</div>
+<script data-own="">
+(function () {
+  // ---- Text editing: saved text changes live in the #text-edits block, and Save publishes a new version of this page ----
+  var SKELETON_STYLE = (document.head.querySelector('style') || {}).textContent || '';
+  var OWN_HTML = Array.prototype.filter.call(document.body.children, function (el) { return el.hasAttribute('data-own'); })
+    .map(function (el) { return el.outerHTML; });
+  var EDITS = {};
+  try { EDITS = JSON.parse(document.getElementById('text-edits').textContent || '{}') || {}; } catch (e) { EDITS = {}; }
+  var MEDIA = {};
+  try { MEDIA = JSON.parse(document.getElementById('media-data').textContent || '{}') || {}; } catch (e) { MEDIA = {}; }
+  function hashEarly(s) { var h = 5381; for (var k = 0; k < s.length; k++) { h = ((h << 5) + h + s.charCodeAt(k)) | 0; } return (h >>> 0).toString(36); }
+  var phSeen = {};
+  var slots = Array.prototype.slice.call(document.querySelectorAll('figure.ph')).map(function (f) {
+    var base = 'ph-' + hashEarly(f.innerHTML.trim());
+    phSeen[base] = (phSeen[base] || 0) + 1;
+    var title = f.querySelector('b');
+    return { el: f, key: base + '-' + phSeen[base], title: title ? title.textContent.trim() : 'Photo' };
+  });
+
+  var ALLOWED = { b: 1, strong: 1, i: 1, em: 1, u: 1, br: 1, small: 1, span: 1, a: 1 };
+  var DROP = { script: 1, style: 1, iframe: 1, object: 1, embed: 1, img: 1, svg: 1, video: 1, audio: 1, link: 1, meta: 1 };
+  function cleanNode(node) {
+    Array.prototype.slice.call(node.childNodes).forEach(function (c) {
+      if (c.nodeType === 8) { c.remove(); return; }
+      if (c.nodeType !== 1) return;
+      var tag = c.tagName.toLowerCase();
+      if (DROP[tag]) { c.remove(); return; }
+      cleanNode(c);
+      if (!ALLOWED[tag]) {
+        var frag = document.createDocumentFragment();
+        if (tag === 'div' || tag === 'p') frag.appendChild(document.createElement('br'));
+        while (c.firstChild) frag.appendChild(c.firstChild);
+        c.replaceWith(frag);
+        return;
+      }
+      Array.prototype.slice.call(c.attributes).forEach(function (a) {
+        var n = a.name.toLowerCase();
+        var keep = n === 'class' || n === 'style' || (tag === 'a' && (n === 'target' || n === 'rel' || (n === 'href' && /^(https?:|#)/i.test(a.value))));
+        if (!keep) c.removeAttribute(a.name);
+      });
+    });
+  }
+  function clean(html) {
+    var t = document.createElement('template');
+    t.innerHTML = String(html);
+    cleanNode(t.content);
+    return t.innerHTML.trim();
+  }
+  function hash(s) { var h = 5381; for (var k = 0; k < s.length; k++) { h = ((h << 5) + h + s.charCodeAt(k)) | 0; } return (h >>> 0).toString(36); }
+
+  var EDIT_SEL = 'header h1, header .eyebrow, header .hero-sub, main .facts b, main .facts span, main h2, main h3, main h4, main p, main li, main td, main th, main .bar .lab, main .rg .lab, main .val, main .chip, main .years b, main .leaves span, main .roots span, main .ph .tag, main .ph b, footer p, footer li, footer h4';
+  var SKIP_IDS = { status: 1, 'e-subject': 1, 'e-body': 1, 'e-note': 1, 'e-msg': 1, 'c-total': 1 };
+  var BLOCK = 'p, li, div, h1, h2, h3, h4, ul, ol, table, tr, svg, form, figure, section';
+  var found = Array.prototype.slice.call(document.querySelectorAll(EDIT_SEL)).filter(function (el) {
+    return !SKIP_IDS[el.id] && !el.closest('svg, form, .qr-box, .controls, .send-row, .waffle, .legend, .dots, .axis2, [data-noedit]') && !el.querySelector(BLOCK);
+  });
+  var editables = found.filter(function (el) { return !found.some(function (o) { return o !== el && o.contains(el); }); });
+  var originals = new Map();
+  var seen = {};
+  editables.forEach(function (el) {
+    var raw = el.innerHTML.trim();
+    var base = el.tagName.toLowerCase() + '-' + hash(raw);
+    seen[base] = (seen[base] || 0) + 1;
+    var key = base + '-' + seen[base];
+    el.setAttribute('data-ek', key);
+    originals.set(el, raw);
+    if (typeof EDITS[key] === 'string') el.innerHTML = clean(EDITS[key]);
+  });
+
+  var bar = document.getElementById('editbar');
+  var editStatus = document.getElementById('edit-status');
+  var startBtn = document.getElementById('edit-start');
+  var saveBtn = document.getElementById('edit-save');
+  var cancelBtn = document.getElementById('edit-cancel');
+  var editing = false;
+  var beforeEdit = new Map();
+  var artifactNs = null;
+
+  function setEditing(on) {
+    editing = on;
+    document.body.classList.toggle('editing', on);
+    editables.forEach(function (el) { if (on) el.setAttribute('contenteditable', 'true'); else el.removeAttribute('contenteditable'); });
+    startBtn.hidden = on; saveBtn.hidden = !on; cancelBtn.hidden = !on;
+    editStatus.textContent = on ? 'Click any outlined text to change it.' : 'Want to change the wording?';
+  }
+  document.addEventListener('click', function (e) {
+    if (editing && e.target.closest('[contenteditable] a, a[contenteditable]')) e.preventDefault();
+  }, true);
+  startBtn.addEventListener('click', function () {
+    beforeEdit = new Map();
+    editables.forEach(function (el) { beforeEdit.set(el, el.innerHTML); });
+    setEditing(true);
+  });
+  cancelBtn.addEventListener('click', function () {
+    editables.forEach(function (el) { if (beforeEdit.has(el)) el.innerHTML = beforeEdit.get(el); });
+    setEditing(false);
+  });
+  saveBtn.addEventListener('click', function () {
+    if (!artifactNs) return;
+    var next = {};
+    editables.forEach(function (el) {
+      var now = el.innerHTML.trim();
+      if (now !== originals.get(el)) next[el.getAttribute('data-ek')] = clean(now);
+    });
+    var doc = buildDoc(next, MEDIA);
+    saveBtn.disabled = true; cancelBtn.disabled = true;
+    editStatus.textContent = 'Saving…';
+    artifactNs.publish(doc).then(function () {
+      editStatus.textContent = 'Saved. Reloading the page…';
+    }).catch(function (err) {
+      saveBtn.disabled = false; cancelBtn.disabled = false;
+      var code = err && err.code;
+      if (code === 'conflict') editStatus.textContent = 'A newer version was saved first. The page is reloading; make your change again.';
+      else if (code === 'not_writer' || code === 'not_granted' || code === 'consent_required') { editStatus.textContent = 'You can view this page but can’t save changes to it.'; saveBtn.hidden = true; }
+      else if (code === 'too_large') editStatus.textContent = 'That change made the page too large to save.';
+      else editStatus.textContent = 'Couldn’t save just now. Try again in a moment.';
+    });
+  });
+  function jsonBlock(id, obj) {
+    return '<script type="application/json" id="' + id + '" data-own="">' + JSON.stringify(obj).replace(/</g, '\\u003c') + '<\/script>';
+  }
+  function buildDoc(edits, media) {
+    var parts = OWN_HTML.map(function (h) {
+      if (/^<script[^>]*id="text-edits"/.test(h)) return jsonBlock('text-edits', edits);
+      if (/^<script[^>]*id="media-data"/.test(h)) return jsonBlock('media-data', media);
+      return h;
+    });
+    return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>' + SKELETON_STYLE + '</style></head><body>' + parts.join('\n') + '</body></html>';
+  }
+
+  // ---- Photos and videos in the placeholder boxes ----
+  var assetsNs = null;
+  var canUpload = false;
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function renderSlot(slot, entry, pending) {
+    var f = slot.el;
+    Array.prototype.slice.call(f.querySelectorAll('.m-grid, .m-cap, .ph-tools')).forEach(function (n) { n.remove(); });
+    var items = (entry && entry.items ? entry.items : []).concat(pending ? pending.items : []);
+    var has = items.length > 0;
+    f.classList.toggle('has-media', has);
+    Array.prototype.forEach.call(f.children, function (c) { if (!c.classList.contains('ph-tools')) c.hidden = has; });
+    if (has) {
+      var grid = el('div', 'm-grid');
+      items.forEach(function (it) {
+        var src = '/_blob/' + it.id;
+        if (it.type === 'video') { var v = el('video'); v.src = src; v.controls = true; v.preload = 'metadata'; v.setAttribute('playsinline', ''); grid.appendChild(v); }
+        else { var im = el('img'); im.src = src; im.alt = slot.title; im.loading = 'lazy'; grid.appendChild(im); }
+      });
+      f.appendChild(grid);
+      var credit = pending ? '' : (entry && entry.credit) || '';
+      f.appendChild(el('figcaption', 'm-cap', slot.title + (credit ? ' · Credit: ' + credit : '')));
+    }
+    if (canUpload) f.appendChild(buildTools(slot, entry, pending));
+  }
+  function buildTools(slot, entry, pending) {
+    var tools = el('div', 'ph-tools');
+    var msg = el('span', 'ph-msg');
+    msg.setAttribute('aria-live', 'polite');
+    if (pending) {
+      var lab = el('label', 'ph-credit');
+      lab.appendChild(document.createTextNode('Photo credit (leave blank if you took it)'));
+      var inp = el('input');
+      inp.type = 'text'; inp.id = 'credit-' + slot.key; inp.placeholder = 'e.g. Ameren Missouri, or a news site';
+      inp.value = (entry && entry.credit) || '';
+      lab.appendChild(inp);
+      tools.appendChild(lab);
+      var save = el('button', 'ph-btn primary', 'Save to page');
+      save.type = 'button';
+      save.addEventListener('click', function () {
+        if (editing) { msg.textContent = 'Save or cancel your text edits first.'; return; }
+        var next = JSON.parse(JSON.stringify(MEDIA));
+        next[slot.key] = { items: ((entry && entry.items) || []).concat(pending.items), credit: inp.value.trim().slice(0, 200) };
+        publishMedia(next, msg, save);
+      });
+      var cancel = el('button', 'ph-btn', 'Cancel');
+      cancel.type = 'button';
+      cancel.addEventListener('click', function () { renderSlot(slot, entry, null); });
+      tools.appendChild(save); tools.appendChild(cancel);
+    } else {
+      var file = el('input');
+      file.type = 'file'; file.accept = 'image/*,video/mp4,video/webm'; file.multiple = true; file.hidden = true; file.id = 'file-' + slot.key;
+      var add = el('button', 'ph-btn primary', entry ? 'Add more' : 'Add photo or video');
+      add.type = 'button';
+      add.addEventListener('click', function () { file.click(); });
+      file.addEventListener('change', function () { uploadFiles(slot, entry, Array.prototype.slice.call(file.files), msg, add); });
+      tools.appendChild(add); tools.appendChild(file);
+      if (entry) {
+        var rm = el('button', 'ph-btn', 'Remove');
+        rm.type = 'button';
+        var armed = false;
+        rm.addEventListener('click', function () {
+          if (editing) { msg.textContent = 'Save or cancel your text edits first.'; return; }
+          if (!armed) { armed = true; rm.textContent = 'Click again to remove'; return; }
+          var next = JSON.parse(JSON.stringify(MEDIA));
+          delete next[slot.key];
+          publishMedia(next, msg, rm);
+        });
+        tools.appendChild(rm);
+      }
+    }
+    tools.appendChild(msg);
+    return tools;
+  }
+  var MAX = 20 * 1024 * 1024;
+  function toJpeg(file) {
+    return new Promise(function (resolve, reject) {
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function () {
+        var scale = Math.min(1, 2400 / Math.max(img.naturalWidth, img.naturalHeight));
+        var c = document.createElement('canvas');
+        c.width = Math.round(img.naturalWidth * scale); c.height = Math.round(img.naturalHeight * scale);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function (b) { b ? resolve(b) : reject(new Error('encode')); }, 'image/jpeg', 0.86);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('decode')); };
+      img.src = url;
+    });
+  }
+  async function uploadFiles(slot, entry, files, msg, btn) {
+    if (!files.length) return;
+    btn.disabled = true;
+    var done = [];
+    for (var i = 0; i < files.length; i++) {
+      var f = files[i];
+      msg.textContent = 'Uploading ' + (i + 1) + ' of ' + files.length + '…';
+      try {
+        var blob, type, kind;
+        if (/^video\//.test(f.type)) {
+          if (f.type !== 'video/mp4' && f.type !== 'video/webm') { msg.textContent = f.name + ': save the video as MP4 first, then try again.'; continue; }
+          blob = f; type = f.type; kind = 'video';
+        } else if (f.type === 'image/gif') { blob = f; type = 'image/gif'; kind = 'image'; }
+        else { blob = await toJpeg(f); type = 'image/jpeg'; kind = 'image'; }
+        if (blob.size > MAX) { msg.textContent = f.name + ' is over 20 MB. Use a shorter or smaller file.'; continue; }
+        var res = await assetsNs.upload(blob, { type: type });
+        done.push({ id: res.id, type: kind });
+      } catch (err) {
+        var code = err && err.code;
+        msg.textContent = f.name + ': ' + (code === 'too_large' ? 'over 20 MB.' : code === 'unsupported_type' || (err && err.message === 'decode') ? 'this file type can’t be used. Try a JPG, PNG or MP4.' : code === 'rate_limited' ? 'too many uploads at once. Wait a minute and try again.' : 'upload failed. Try again.');
+      }
+    }
+    btn.disabled = false;
+    if (done.length) renderSlot(slot, entry, { items: done });
+  }
+  function publishMedia(next, msg, btn) {
+    if (!artifactNs) return;
+    btn.disabled = true;
+    msg.textContent = 'Saving…';
+    artifactNs.publish(buildDoc(EDITS, next)).then(function () {
+      msg.textContent = 'Saved. Reloading the page…';
+    }).catch(function (err) {
+      btn.disabled = false;
+      var code = err && err.code;
+      msg.textContent = code === 'conflict' ? 'A newer version was saved first. The page is reloading; try again after.' : (code === 'not_writer' || code === 'not_granted') ? 'You can view this page but can’t save changes to it.' : 'Couldn’t save just now. Try again in a moment.';
+    });
+  }
+  slots.forEach(function (s) { if (MEDIA[s.key]) renderSlot(s, MEDIA[s.key], null); });
+
+  (async function () {
+    if (!window.claude || typeof window.claude.use !== 'function') return;
+    artifactNs = await window.claude.use('artifact');
+    if (!artifactNs) return;
+    var user = await window.claude.use('user');
+    var can = true;
+    try { if (user) can = await user.canEdit(); } catch (e) { can = true; }
+    if (!can) return;
+    bar.hidden = false;
+    assetsNs = await window.claude.use('assets');
+    if (assetsNs) {
+      canUpload = true;
+      slots.forEach(function (s) { renderSlot(s, MEDIA[s.key] || null, null); });
+    }
+  })();
+
+  // ---- Motion (runs after the edit snapshot, so none of these classes are ever saved into the page) ----
+  var MOTION = 'IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var vh = function () { return window.innerHeight || 800; };
+  function below(el) { return el.getBoundingClientRect().top > vh() * 0.92; }
+  function watch(els, pre, onIn, margin) {
+    if (!MOTION) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        requestAnimationFrame(function () { if (pre) en.target.classList.remove(pre); if (onIn) onIn(en.target); });
+      });
+    }, { rootMargin: margin || '0px 0px -12% 0px', threshold: 0.01 });
+    els.forEach(function (el) { if (below(el)) { if (pre) el.classList.add(pre); io.observe(el); } });
+  }
+  function all(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
+
+  // 1. Cards, headings and blocks glide up as they enter, staggered within each row
+  var REVEAL = '.band > .wrap > .head, #overview .thesis p, #overview .facts > div, .ov-media > *, .storm, .chart, .panel, .calc, .demo, .composer, .stat-row > div, .makers > div, .opts > div, .livemap, .ladder > div, .faults, .shift, .tablewrap, .cause, .path > div, .journey li, .qa, .sol-head, .grid2 > figure.ph, .takeaway, .subhead, .ask, #action .prose';
+  var revealEls = all(REVEAL);
+  revealEls.forEach(function (el) {
+    el.classList.add('a-el');
+    var sibs = el.parentElement ? Array.prototype.filter.call(el.parentElement.children, function (c) { return revealEls.indexOf(c) !== -1; }) : [];
+    var i = sibs.indexOf(el);
+    if (i > 0) el.style.transitionDelay = Math.min(i, 5) * 90 + 'ms';
+  });
+  watch(revealEls, 'a-pre', function (el) { setTimeout(function () { el.style.transitionDelay = ''; }, 1600); });
+
+  // 2. Big numbers count up the first time they come into view
+  function countUp(el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    var node; while ((node = walker.nextNode())) { if (/\d/.test(node.nodeValue)) break; }
+    if (!node) return;
+    var original = el.innerHTML;
+    var text = node.nodeValue;
+    var m = text.match(/(\d[\d,]*\.?\d*)/);
+    if (!m) return;
+    var target = parseFloat(m[1].replace(/,/g, ''));
+    var decimals = (m[1].split('.')[1] || '').length;
+    var comma = m[1].indexOf(',') !== -1;
+    var t0 = null, dur = 1500;
+    function fmt(v) { var s = v.toFixed(decimals); if (comma) s = Number(s).toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }); return s; }
+    function step(ts) {
+      if (t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / dur);
+      var e = 1 - Math.pow(1 - k, 4);
+      node.nodeValue = text.replace(m[1], fmt(target * e));
+      if (k < 1) requestAnimationFrame(step); else el.innerHTML = original;
+    }
+    requestAnimationFrame(step);
+  }
+  watch(all('#overview .facts b, .versus .n, .stat-row b, .storm .big, .faults .big'), null, countUp, '0px 0px -18% 0px');
+
+  // 3. Bar charts and ranges grow out from the axis
+  var growEls = all('.chart, .order, .dark-band .bars');
+  growEls.forEach(function (el) { el.classList.add('grow-el'); });
+  watch(growEls, 'grow-pre', null, '0px 0px -20% 0px');
+
+  // 4. The waffle fills in square by square
+  var wf = document.getElementById('waffle');
+  if (wf) setTimeout(function () {
+    Array.prototype.forEach.call(wf.children, function (sq, i) { sq.style.transitionDelay = (i * 22) + 'ms'; });
+    watch([wf], 'w-pre', null, '0px 0px -20% 0px');
+  }, 0);
+
+  // 5. The problem tree: roots draw in, the trunk grows, leaves pop open
+  all('.ptree').forEach(function (t) {
+    all('.ptree .ground svg path').forEach(function (p) { p.setAttribute('pathLength', '1'); });
+    all('.ptree .leaves span, .ptree .roots span').forEach(function (s, i) { s.style.transitionDelay = (300 + (i % 5) * 110) + 'ms'; });
+    watch([t], 't-pre', null, '0px 0px -25% 0px');
+  });
+
+  // 6. The four power-path steps light up in order
+  all('.path').forEach(function (p) {
+    Array.prototype.forEach.call(p.children, function (c, i) { c.style.transitionDelay = (i * 220) + 'ms'; });
+    watch([p], 'p-pre', null, '0px 0px -25% 0px');
+  });
+
+  // 7. Hero: the street's lights switch on one by one, then the headline drifts back as you scroll
+  var wins = all('.hero-scene .win:not(.off):not(.flick)');
+  if (MOTION) {
+    wins.forEach(function (w) { w.classList.add('dark-pre'); });
+    wins.forEach(function (w, i) { setTimeout(function () { w.classList.remove('dark-pre'); }, 500 + i * 70 + Math.random() * 120); });
+  }
+  var hero = document.querySelector('.hero');
+  var heroInner = document.querySelector('.hero-inner');
+  var heroScene = document.querySelector('.hero-scene');
+  var sweep = document.querySelector('.ask .sweep');
+  var nav = document.querySelector('.nav');
+  var progBar = null;
+  if (nav) { progBar = document.createElement('div'); progBar.className = 'scroll-progress'; progBar.setAttribute('aria-hidden', 'true'); nav.appendChild(progBar); }
+  var ticking = false;
+  function onScroll() {
+    ticking = false;
+    var y = window.scrollY || window.pageYOffset || 0;
+    var docH = Math.max(1, document.documentElement.scrollHeight - vh());
+    if (progBar) progBar.style.transform = 'scaleX(' + Math.min(1, y / docH).toFixed(4) + ')';
+    if (!MOTION) return;
+    if (hero && heroInner) {
+      var hh = hero.offsetHeight || 1;
+      if (y < hh * 1.2) {
+        var k = Math.min(1, y / hh);
+        heroInner.style.transform = 'translateY(' + (y * 0.32).toFixed(1) + 'px) scale(' + (1 - k * 0.06).toFixed(4) + ')';
+        heroInner.style.opacity = String(Math.max(0, 1 - k * 1.25).toFixed(3));
+        if (heroScene) heroScene.style.transform = 'translateY(' + (y * 0.1).toFixed(1) + 'px)';
+      }
+    }
+    if (sweep) {
+      var r = sweep.getBoundingClientRect();
+      var p = Math.max(0, Math.min(1, (vh() * 0.88 - r.top) / (vh() * 0.55)));
+      sweep.style.setProperty('--p', (p * 100).toFixed(1) + '%');
+      sweep.classList.toggle('done', p >= 0.99);
+    }
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  // Waffle: 480 minutes as 48 squares, 93 counted (about 9 squares)
+  var waffle = document.getElementById('waffle');
+  for (var w = 0; w < 48; w++) {
+    var sq = document.createElement('i');
+    if (w >= 9) sq.className = 'h';
+    waffle.appendChild(sq);
+  }
+
+  // Cost calculator
+  var ids = ['c-days','c-food','c-nights','c-rate','c-meals','c-work'];
+  function v(id) { var n = parseFloat(document.getElementById(id).value); return isFinite(n) && n > 0 ? n : 0; }
+  function calc() {
+    var total = v('c-food') + v('c-nights') * v('c-rate') + v('c-days') * v('c-meals') + v('c-work');
+    document.getElementById('c-total').textContent = '$' + Math.round(total).toLocaleString('en-US');
+  }
+  ids.forEach(function (id) { document.getElementById(id).addEventListener('input', calc); });
+  document.getElementById('calcForm').addEventListener('submit', function (e) { e.preventDefault(); });
+  calc();
+
+  // ===== Diagrams =====
+  var DG_MOTION = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) && 'IntersectionObserver' in window;
+  function onceInView(el, fn, threshold) {
+    if (!el) return;
+    if (!('IntersectionObserver' in window)) { fn(); return; }
+    var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); fn(); } }, { threshold: threshold || 0.35 });
+    io.observe(el);
+  }
+
+  // Plant to porch: tap a step to focus that part; drop a tree to see the street go dark
+  (function () {
+    var svg = document.getElementById('p2p');
+    if (!svg) return;
+    var status = document.getElementById('p2pStatus');
+    var faultBtn = document.getElementById('p2pFault');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.path > div'));
+    var base = status.textContent;
+    function focus(n) {
+      if (n) svg.setAttribute('data-focus', n); else svg.removeAttribute('data-focus');
+      cards.forEach(function (c, i) { c.setAttribute('aria-pressed', String(i + 1 === n)); });
+      if (n && cards[n - 1]) {
+        var h = cards[n - 1].querySelector('h3'), p = cards[n - 1].querySelector('p:last-child');
+        status.textContent = (h ? h.textContent + ': ' : '') + (p ? p.textContent : '');
+      } else if (!svg.classList.contains('faulted')) status.textContent = base;
+    }
+    cards.forEach(function (c, i) {
+      c.setAttribute('role', 'button'); c.tabIndex = 0; c.setAttribute('aria-pressed', 'false');
+      function pick() { if (document.body.classList.contains('editing')) return; focus(svg.getAttribute('data-focus') === String(i + 1) ? 0 : i + 1); }
+      c.addEventListener('click', pick);
+      c.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+    });
+    Array.prototype.forEach.call(svg.querySelectorAll('.stage'), function (g) {
+      g.style.cursor = 'pointer';
+      g.addEventListener('click', function () { var n = +g.getAttribute('data-stage'); focus(svg.getAttribute('data-focus') === String(n) ? 0 : n); });
+    });
+    faultBtn.addEventListener('click', function () {
+      var on = !svg.classList.contains('faulted');
+      svg.classList.toggle('faulted', on);
+      faultBtn.setAttribute('aria-pressed', String(on));
+      faultBtn.textContent = on ? 'Tree is on the line' : 'Drop a tree on the street line';
+      if (on) { focus(4); status.textContent = 'A limb falls across the street line. Everything past the break loses power, and the homes have no second line to be fed from, so the substation can’t reroute around it. They wait for a crew.'; }
+      else focus(0);
+    });
+    document.getElementById('p2pReset').addEventListener('click', function () {
+      svg.classList.remove('faulted'); faultBtn.setAttribute('aria-pressed', 'false'); faultBtn.textContent = 'Drop a tree on the street line'; focus(0);
+    });
+    if (DG_MOTION && svg.getBoundingClientRect().top > window.innerHeight * 0.8) {
+      svg.classList.add('boot');
+      onceInView(svg, function () {
+        [1, 2, 3, 4].forEach(function (k) { setTimeout(function () { svg.classList.add('b' + k); }, 250 + (k - 1) * 450); });
+        setTimeout(function () { svg.classList.remove('boot', 'b1', 'b2', 'b3', 'b4'); }, 2400);
+      });
+    }
+  })();
+
+  // Smart switch anatomy: hover or tap a part
+  (function () {
+    var svg = document.getElementById('anat');
+    if (!svg) return;
+    var items = Array.prototype.slice.call(document.querySelectorAll('.anatomy .parts li'));
+    var locked = 0;
+    function show(n) { if (n) svg.setAttribute('data-on', n); else svg.removeAttribute('data-on'); items.forEach(function (li, i) { li.classList.toggle('on', i + 1 === n); }); }
+    items.forEach(function (li, i) {
+      li.tabIndex = 0; li.setAttribute('role', 'button');
+      li.addEventListener('mouseenter', function () { if (!locked) show(i + 1); });
+      li.addEventListener('mouseleave', function () { if (!locked) show(0); });
+      li.addEventListener('focus', function () { show(i + 1); });
+      li.addEventListener('blur', function () { if (!locked) show(0); });
+      li.addEventListener('click', function () { if (document.body.classList.contains('editing')) return; locked = locked === i + 1 ? 0 : i + 1; show(locked); });
+    });
+    Array.prototype.forEach.call(svg.querySelectorAll('.mk, .part'), function (g) {
+      var n = +g.getAttribute('data-part');
+      g.addEventListener('mouseenter', function () { if (!locked) show(n); });
+      g.addEventListener('mouseleave', function () { if (!locked) show(0); });
+      g.addEventListener('click', function () { locked = locked === n ? 0 : n; show(locked); });
+    });
+  })();
+
+  // Self-healing line: step-by-step fault, trip, reclose, isolate and restore
+  (function () {
+    var svg = document.getElementById('fl');
+    if (!svg) return;
+    var NS = 'http://www.w3.org/2000/svg';
+    var taps = svg.querySelector('.fl-taps');
+    var homes = [{ s: 'A', x: 196 }, { s: 'A', x: 262 }, { s: 'B', x: 392 }, { s: 'B', x: 468 }, { s: 'C', x: 646 }, { s: 'C', x: 742 }];
+    homes.forEach(function (h) {
+      var g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'fl-house'); g.setAttribute('data-s', h.s);
+      g.innerHTML = '<line class="fl-tap" x1="' + h.x + '" y1="150" x2="' + h.x + '" y2="250"/><path d="M' + (h.x - 26) + ' 268 L' + h.x + ' 248 L' + (h.x + 26) + ' 268 Z"/><rect x="' + (h.x - 21) + '" y="268" width="42" height="32"/><rect class="w" x="' + (h.x - 13) + '" y="276" width="10" height="10"/><rect class="w" x="' + (h.x + 3) + '" y="276" width="10" height="10"/>';
+      taps.appendChild(g);
+    });
+    var N = { cb: 'closed', r1: 'closed', r2: 'closed', t: 'open', live: 'ABC', rev: '', fx: '' };
+    function S(o) { var r = {}; for (var k in N) r[k] = N[k]; for (var j in o) r[j] = o[j]; return r; }
+    var SC = {
+      perm: [
+        S({ label: 'Normal', cap: 'Normal: the substation feeds sections A, B and C. The tie switch to the neighboring feeder stays open as a backup path.' }),
+        S({ label: 'Fault', fx: 'tree arc sense', cap: 'A tree falls across section B. Fault current rushes through R1, which senses it within a fraction of a second.' }),
+        S({ label: 'Trip', fx: 'tree xmark', r1: 'open', live: 'A', cap: 'R1 opens to stop the fault current. Sections B and C go dark, but section A stays on because it’s upstream of R1.' }),
+        S({ label: 'Test', fx: 'tree xmark arc', r1: 'lock', live: 'A', cap: 'R1 closes once to test the line. The tree is still there, so it trips again and locks out. This is a permanent fault.' }),
+        S({ label: 'Isolate', fx: 'tree xmark comm', r1: 'lock', r2: 'open', live: 'A', cap: 'The switches share what they measured by radio. The fault is between R1 and R2, so R2 opens too. Section B is now cut off on both sides.' }),
+        S({ label: 'Restore', fx: 'tree xmark comm', r1: 'lock', r2: 'open', t: 'closed', live: 'AC', rev: 'C', cap: 'The tie switch closes and the neighboring feeder powers section C from the other end. Four of six homes have power within seconds; section B waits for a crew.' })
+      ],
+      temp: [
+        S({ label: 'Normal', cap: 'Normal: the substation feeds sections A, B and C.' }),
+        S({ label: 'Fault', fx: 'branch arc sense', cap: 'Wind pushes a branch into the line. That’s a temporary fault, the most common kind on overhead lines.' }),
+        S({ label: 'Trip', fx: 'branch', r1: 'open', live: 'A', cap: 'R1 opens for a moment, which puts out the electrical arc.' }),
+        S({ label: 'Reclose', fx: '', cap: 'R1 closes again. The branch has blown clear, so power stays on. Homes saw only a flicker, and no crew had to come out.' })
+      ],
+      none: [
+        S({ label: 'Normal', r1: 'absent', r2: 'absent', t: 'absent', cap: 'Without smart switches, one breaker at the substation protects the whole line, and there’s no tie to another feeder.' }),
+        S({ label: 'Fault', r1: 'absent', r2: 'absent', t: 'absent', fx: 'tree arc', cap: 'A tree falls across section B.' }),
+        S({ label: 'Trip', r1: 'absent', r2: 'absent', t: 'absent', fx: 'tree xmark', cb: 'open', live: '', cap: 'The substation breaker trips. All six homes go dark, even the ones nowhere near the tree.' }),
+        S({ label: 'Wait', r1: 'absent', r2: 'absent', t: 'absent', fx: 'tree xmark', cb: 'open', live: '', cap: 'Everyone waits while a crew drives out, patrols the line to find the tree, and repairs it.' })
+      ]
+    };
+    var WORD = { closed: 'CLOSED', open: 'OPEN', lock: 'LOCKED OUT', absent: '' };
+    var sc = 'perm', step = 0, timer = null, touched = false;
+    var stepsEl = document.getElementById('flSteps'), capEl = document.getElementById('flCap'), countEl = document.getElementById('flCount');
+    var playBtn = document.getElementById('flPlay');
+    function sw(id, st) {
+      var g = document.getElementById(id);
+      g.classList.toggle('open', st === 'open'); g.classList.toggle('lock', st === 'lock'); g.classList.toggle('absent', st === 'absent');
+      g.querySelector('.fl-sws').textContent = WORD[st] || '';
+    }
+    function buildSteps() {
+      stepsEl.innerHTML = '';
+      SC[sc].forEach(function (st, i) {
+        var li = document.createElement('li'); li.textContent = st.label; li.tabIndex = 0;
+        li.addEventListener('click', function () { touched = true; stop(); go(i); });
+        li.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); touched = true; stop(); go(i); } });
+        stepsEl.appendChild(li);
+      });
+    }
+    function go(i) {
+      var list = SC[sc]; step = Math.max(0, Math.min(list.length - 1, i));
+      var s = list[step];
+      sw('flCB', s.cb); sw('flR1', s.r1); sw('flR2', s.r2); sw('flT', s.t);
+      ['A', 'B', 'C'].forEach(function (k) {
+        var live = s.live.indexOf(k) !== -1;
+        document.getElementById('flW' + k).classList.toggle('dead', !live);
+        var f = document.getElementById('flF' + k); f.classList.toggle('on', live); f.classList.toggle('rev', s.rev.indexOf(k) !== -1);
+      });
+      var tieLive = s.t === 'closed';
+      document.getElementById('flFT').classList.toggle('on', tieLive);
+      document.getElementById('flWT').style.opacity = s.t === 'absent' ? '0' : '1';
+      document.getElementById('flWT').classList.toggle('dead', !tieLive);
+      var on = 0;
+      Array.prototype.forEach.call(taps.children, function (g) {
+        var live = s.live.indexOf(g.getAttribute('data-s')) !== -1;
+        g.classList.toggle('off', !live); g.querySelector('.fl-tap').classList.toggle('dead', !live); if (live) on++;
+      });
+      ['tree', 'branch', 'arc', 'xmark', 'sense', 'comm'].forEach(function (c) { svg.classList.toggle(c, s.fx.split(' ').indexOf(c) !== -1); });
+      Array.prototype.forEach.call(stepsEl.children, function (li, k) { li.classList.toggle('on', k === step); li.classList.toggle('done', k < step); li.setAttribute('aria-current', k === step ? 'step' : 'false'); });
+      capEl.textContent = s.cap;
+      countEl.innerHTML = '<b>' + on + '</b> of 6 homes have power';
+      document.getElementById('flBack').disabled = step === 0;
+      document.getElementById('flNext').disabled = step === list.length - 1;
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } playBtn.textContent = 'Play'; }
+    function play() {
+      if (timer) { stop(); return; }
+      if (step >= SC[sc].length - 1) go(0);
+      playBtn.textContent = 'Pause';
+      timer = setInterval(function () { if (step >= SC[sc].length - 1) { stop(); return; } go(step + 1); }, DG_MOTION ? 2600 : 3200);
+    }
+    playBtn.addEventListener('click', function () { touched = true; play(); });
+    document.getElementById('flNext').addEventListener('click', function () { touched = true; stop(); go(step + 1); });
+    document.getElementById('flBack').addEventListener('click', function () { touched = true; stop(); go(step - 1); });
+    document.getElementById('flReset').addEventListener('click', function () { touched = true; stop(); go(0); });
+    Array.prototype.forEach.call(document.querySelectorAll('.dg-seg [data-sc]'), function (b) {
+      b.addEventListener('click', function () {
+        touched = true; stop(); sc = b.getAttribute('data-sc');
+        Array.prototype.forEach.call(document.querySelectorAll('.dg-seg [data-sc]'), function (o) { o.classList.toggle('on', o === b); o.setAttribute('aria-selected', String(o === b)); });
+        buildSteps(); go(0);
+      });
+    });
+    buildSteps(); go(0);
+    onceInView(document.querySelector('.fl-demo'), function () { if (!touched && DG_MOTION) setTimeout(function () { if (!touched) play(); }, 600); }, 0.45);
+  })();
+
+  // Restoration network: branches come back in Ameren's stated order
+  (function () {
+    var svg = document.getElementById('rs');
+    if (!svg || !DG_MOTION || svg.getBoundingClientRect().top < window.innerHeight * 0.85) return;
+    svg.classList.add('seq');
+    onceInView(svg, function () {
+      [1, 2, 3, 4].forEach(function (k) { setTimeout(function () { svg.classList.add('s' + k); }, 300 + (k - 1) * 750); });
+    }, 0.4);
+  })();
+
+  // Dive underground: scroll position drives the scene
+  (function () {
+    var dive = document.getElementById('dive');
+    var svg = document.getElementById('diveSvg');
+    if (!dive || !svg) return;
+    var stage = dive.querySelector('.dive-stage');
+    var tree = document.getElementById('dvTree');
+    var over = document.getElementById('dvOverhead');
+    var under = document.getElementById('dvUnder');
+    var reveal = document.getElementById('dvCableReveal');
+    var meter = document.getElementById('diveMeter');
+    var topEl = dive.querySelector('.dive-top');
+    var caps = Array.prototype.slice.call(dive.querySelectorAll('.dc'));
+    var pebbles = document.getElementById('dvPebbles');
+    var NS = 'http://www.w3.org/2000/svg';
+    for (var i = 0; i < 70; i++) {
+      var c = document.createElementNS(NS, 'circle');
+      c.setAttribute('cx', (i * 97) % 1200 + (i % 3) * 11);
+      c.setAttribute('cy', 520 + ((i * 131) % 860));
+      c.setAttribute('r', 3 + (i % 5) * 2);
+      pebbles.appendChild(c);
+    }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+    function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+    var lastCap = -1;
+    function draw(p) {
+      var fall = ease(clamp((p - 0.12) / 0.2));
+      tree.setAttribute('transform', 'rotate(' + (-40 * fall).toFixed(2) + ' 560 500)');
+      var wireGone = clamp((p - 0.38) / 0.16);
+      over.style.opacity = String(1 - wireGone);
+      svg.classList.toggle('sparking', fall > 0.92 && wireGone < 0.3);
+      var cam = ease(clamp((p - 0.42) / 0.36));
+      svg.setAttribute('viewBox', '0 ' + (cam * 400).toFixed(1) + ' 1200 750');
+      if (topEl) { topEl.style.opacity = String(1 - cam); topEl.style.transform = 'translateY(' + (-30 * cam).toFixed(1) + 'px)'; }
+      var q = clamp((p - 0.62) / 0.26);
+      reveal.setAttribute('width', (q * 1200).toFixed(1));
+      under.style.opacity = String(clamp((p - 0.45) / 0.15));
+      var powered = q > 0.95;
+      svg.classList.toggle('powered', powered);
+      svg.classList.toggle('dark', fall > 0.92 && !powered);
+      var idx = p < 0.12 ? 0 : p < 0.4 ? 1 : p < 0.62 ? 2 : 3;
+      if (idx !== lastCap) { caps.forEach(function (el, k) { el.classList.toggle('on', k === idx); }); lastCap = idx; }
+      if (meter) meter.style.transform = 'scaleY(' + p.toFixed(3) + ')';
+    }
+    if (reduce) { draw(1); return; }
+    var queued = false;
+    function update() {
+      queued = false;
+      var r = dive.getBoundingClientRect();
+      var travel = Math.max(1, dive.offsetHeight - stage.offsetHeight);
+      var top = parseFloat(getComputedStyle(stage).top) || 0;
+      draw(clamp((top - r.top) / travel));
+    }
+    window.addEventListener('scroll', function () { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  // Email a decision-maker
+  var RECIPIENTS = {
+    psc: {
+      email: 'pscinfo@psc.mo.gov',
+      note: 'Missouri Public Service Commission · phone 1-800-392-4211. For a complaint about your own account, the PSC asks you to contact Ameren first.',
+      greet: 'Dear Missouri Public Service Commission,',
+      subject: 'Public comment: repeated storm outages in Oakville (ZIP 63129)',
+      asks: [
+        'Require utilities to report storm-included outage numbers next to the storm-adjusted ones when ranking worst-performing circuits.',
+        'Ask Ameren Missouri to explain where Oakville’s worst lines rank for storm-hardening in its Smart Energy Plan.'
+      ]
+    },
+    opc: {
+      email: 'mopco@opc.mo.gov',
+      note: 'Missouri Office of the Public Counsel · phone 573-751-4857.',
+      greet: 'Dear Office of the Public Counsel,',
+      subject: 'Customer concern: repeated multi-day outages in Oakville',
+      asks: [
+        'Push in Ameren Missouri cases for storm-included reliability numbers to count when deciding which lines get upgraded.',
+        'Support upgrades for neighborhoods that lose power in every major storm, at a fair cost to customers.'
+      ]
+    },
+    archer: {
+      email: '',
+      note: 'Councilman Archer’s office: (314) 615-5442. Find his email on the District 6 page of stlouiscountymo.gov and paste it above.',
+      greet: 'Dear Councilman Archer,',
+      subject: 'Oakville power outages: request for a town hall with Ameren',
+      asks: [
+        'Host a public meeting in Oakville with Ameren Missouri’s Archview Division.',
+        'Send a letter supporting storm-hardening and targeted burial of Oakville’s worst lines in Ameren’s next Smart Energy Plan.',
+        'Support a new federal grant application to bury the hardest-to-reach backyard lines.'
+      ]
+    },
+    ameren: {
+      email: '',
+      note: 'Ameren Missouri customer service: 800-552-7583. Ameren takes written messages through the contact form on ameren.com, so use Copy email and paste it there.',
+      greet: 'Dear Ameren Missouri Archview Division,',
+      subject: 'Request: reliability upgrades for my Oakville street',
+      asks: [
+        'Tell me which circuit serves my street, how it ranks for reliability, and when its lines were last trimmed.',
+        'Include Oakville’s worst lines in the next round of Smart Energy Plan storm-hardening, with smart switches and stronger poles.'
+      ]
+    }
+  };
+  var form = document.getElementById('emailForm');
+  var toEl = document.getElementById('e-to');
+  var noteEl = document.getElementById('e-note');
+  var subjEl = document.getElementById('e-subject');
+  var bodyEl = document.getElementById('e-body');
+  var mailBtn = document.getElementById('e-mailto');
+  var emsg = document.getElementById('e-msg');
+  var current = 'psc';
+
+  function val(id) { return document.getElementById(id).value.trim(); }
+  function buildEmail() {
+    var r = RECIPIENTS[current];
+    var name = val('e-name') || '[Your name]';
+    var street = val('e-street');
+    var lines = [r.greet, ''];
+    lines.push('I live in Oakville, Missouri (ZIP 63129)' + (street ? ', near ' + street : '') + '. My neighborhood loses power again and again during major storms. My longest outage lasted ' + document.getElementById('e-long').value + '.' + (document.getElementById('e-med').checked ? ' Someone in my home uses medical equipment that needs electricity, so long outages are a real health risk for us.' : ''));
+    var story = val('e-story');
+    if (story) { lines.push(''); lines.push(story); }
+    lines.push('');
+    lines.push('This is a wider problem. Ameren Missouri’s 2023 reliability report shows the average customer was without power 93 minutes when major storms are left out, but 480 minutes when they are counted. In ZIP 63129, 399 Medicare patients rely on electricity-powered medical equipment at home, according to federal HHS data.');
+    lines.push('');
+    lines.push('I am asking you to:');
+    r.asks.forEach(function (a, i) { lines.push((i + 1) + '. ' + a); });
+    lines.push('');
+    lines.push('Thank you,');
+    lines.push(name);
+    lines.push((street ? street + ', ' : '') + 'Oakville, MO 63129');
+    return { subject: r.subject, body: lines.join('\n') };
+  }
+  function renderEmail() {
+    var e = buildEmail();
+    subjEl.textContent = 'Subject: ' + e.subject;
+    bodyEl.textContent = e.body;
+    mailBtn.href = 'mailto:' + encodeURIComponent(toEl.value.trim()).replace(/%40/g, '@') + '?subject=' + encodeURIComponent(e.subject) + '&body=' + encodeURIComponent(e.body);
+  }
+  function pickRecipient(key) {
+    current = key;
+    toEl.value = RECIPIENTS[key].email;
+    noteEl.textContent = RECIPIENTS[key].note;
+    emsg.textContent = '';
+    renderEmail();
+  }
+  form.addEventListener('change', function (ev) {
+    if (ev.target.name === 'rcpt') pickRecipient(ev.target.value); else renderEmail();
+  });
+  form.addEventListener('input', renderEmail);
+  form.addEventListener('submit', function (ev) { ev.preventDefault(); });
+  mailBtn.addEventListener('click', function () {
+    emsg.textContent = 'If your email app didn’t open, use Copy email and paste it into a new message.';
+  });
+  document.getElementById('e-copy').addEventListener('click', function () {
+    var e = buildEmail();
+    var text = 'To: ' + (toEl.value.trim() || '[address]') + '\nSubject: ' + e.subject + '\n\n' + e.body;
+    function fallback() {
+      var rg = document.createRange(); rg.selectNodeContents(bodyEl);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(rg);
+      emsg.textContent = 'Email selected. Press Ctrl+C or Cmd+C to copy.';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { emsg.textContent = 'Copied. Paste it into a new email.'; }).catch(fallback);
+    } else { fallback(); }
+  });
+  pickRecipient('psc');
+})();
+</script>
+</body></html>
